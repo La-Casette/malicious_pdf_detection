@@ -1,0 +1,80 @@
+%PDF-1.1
+%‚„œ”
+1 0 obj 
+<<
+/Outlines 2 0 R
+/OpenAction 3 0 R
+/Pages 4 0 R
+/Type /Catalog
+>>
+endobj 
+2 0 obj 
+<<
+/Count 0
+/Type /Outlines
+>>
+endobj 
+4 0 obj 
+<<
+/Kids [5 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj 
+5 0 obj 
+<<
+/Parent 4 0 R
+/Resources 
+<<
+/Font 
+<<
+/F1 null
+>>
+/ProcSet null
+>>
+/MediaBox [0 0 612 792]
+/Contents 6 0 R
+/Type /Page
+>>
+endobj 
+6 0 obj 
+<<
+/Length 58
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(Printed Template File)Tj
+ET
+
+endstream 
+endobj 
+3 0 obj 
+<<
+/Win 
+<<
+/F (print.pdf)
+/O (print)
+>>
+/Type /Action
+/S /Launch
+>>
+endobj xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000100 00000 n 
+0000000461 00000 n 
+0000000148 00000 n 
+0000000207 00000 n 
+0000000350 00000 n 
+trailer
+
+<<
+/Root 1 0 R
+/Size 7
+>>
+startxref
+546
+%%EOF
