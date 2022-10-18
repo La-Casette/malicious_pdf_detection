@@ -1,0 +1,3 @@
+[console_scripts]
+peepdf = peepdf.main:main
+

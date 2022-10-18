@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: pdfid
+Version: 1.1.1
+Summary: PDFID simple tool to analyze PDF malicious files by DidierStevens. Customized by Matteo Lodi to be used as a library.
+Home-page: https://github.com/mlodic/pdfid
+Author: Matteo Lodi
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Requires-Python: >=2.6, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pdfid
+
+[![PyPI version](https://badge.fury.io/py/pdfid.svg)](https://badge.fury.io/py/pdfid)
+
+This is a clone of Didier Steven's [tool](https://github.com/DidierStevens/DidierStevensSuite/blob/master/pdfid.py) created to publish it into Pypi and make it usable as a library.
+
+See `test.py` for an example of usage
+
+
+
