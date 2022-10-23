@@ -5,7 +5,7 @@ import collections
 
 def pdf_analysis(filename):
 	xml = PDFiD(filename)
-	doc = PDFiD2JSON(xml, True)
+	doc = PDFiD2JSON(xml, False)
 
 	y = json.loads(doc)
 	js = json.loads(json.dumps(y[0]))
@@ -42,7 +42,7 @@ def dir_analysis(dirname):
 
 if __name__ == '__main__':
 
-	directories = ["../../pdf_data/clean_pdf_100_embed_video/", "../../pdf_data/malware_pdf_cve_sorted_173_files/", "../../pdf_data/clean_pdf_9000_files/", "../../pdf_data/MALWARE_PDF_PRE_04-2011_10982_files/"]
+	directories = ["../../pdf_data/malware_pdf_cve_sorted_173_files/", "../../pdf_data/clean_pdf_9000_files/"]#, "../../pdf_data/malware_pdf_pre_04-2011_10982_files/"]
 
 	for dire in directories:
 		out = dir_analysis(dire)

