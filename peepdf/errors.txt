@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "peepdf/peepdf.py", line 519, in <module>
+    from lxml import etree
+ImportError: No module named lxml
