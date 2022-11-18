@@ -15,10 +15,17 @@ def compute_scores(y_test, y_test_predicted):
     print('True negative: %d'%(knn_confmat[0, 0]))
     print('False Negative Rate: %f%%'%((knn_confmat[1, 0]/(knn_confmat[1, 0] + knn_confmat[1, 1]))*100))
 
-def kfold_cross_validation(model, X, y, k):
+def kfold_cross_validation(model, X, y, k=5, scoring='accuracy'):
     cv = KFold(n_splits=k, random_state=1, shuffle=True)
-    scores = cross_val_score(model, X, y.reshape(-1,), scoring='accuracy', cv=cv, n_jobs=-1)
+    if scoring == 'precision':
+        scores = cross_val_score(model, X, y.reshape(-1,), 
+                                scoring=metrics.make_scorer(metrics.precision_score, pos_label=0), # NPV metric
+                                cv=cv, 
+                                n_jobs=-1)
+    else:
+        scores = cross_val_score(model, X, y.reshape(-1,), scoring=scoring, cv=cv, n_jobs=-1)
     return scores
 
 def compute_accuracy(y_test, y_test_predicted):
     return metrics.accuracy_score(y_test, y_test_predicted)
+
