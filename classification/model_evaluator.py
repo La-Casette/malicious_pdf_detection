@@ -22,7 +22,7 @@ def kfold_cross_validation(model, X, y, k=5, scoring='accuracy'):
                                 scoring=metrics.make_scorer(metrics.precision_score, pos_label=0), # NPV metric
                                 cv=cv, 
                                 n_jobs=-1)
-    else:
+    if scoring == 'accuracy':
         scores = cross_val_score(model, X, y.reshape(-1,), scoring=scoring, cv=cv, n_jobs=-1)
     return scores
 
