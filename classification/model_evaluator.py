@@ -1,6 +1,8 @@
 import sklearn.metrics as metrics
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
+import pandas as pd
+from sklearn.model_selection import train_test_split
 def compute_scores(y_test, y_test_predicted):
     """
         905: benign benign TN
@@ -28,4 +30,14 @@ def kfold_cross_validation(model, X, y, k=5, scoring='accuracy'):
 
 def compute_accuracy(y_test, y_test_predicted):
     return metrics.accuracy_score(y_test, y_test_predicted)
+
+def get_train_test_split(df):
+    X_tot = df.iloc[:,:-1]
+    y_tot = df.iloc[:,-1:]
+    X_train, X_test, y_train, y_test= train_test_split(X_tot, y_tot,
+                                                        test_size= 0.2,
+                                                        shuffle= True, #shuffle the data to avoid bias
+                                                        stratify=df['malware'],
+                                                        random_state= 0)
+    return X_train, X_test, y_train, y_test
 
