@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-def import_data_train_test():
-    X_tot = np.load('../data/X_tot.npy')
-    X_train, X_test, y_train, y_test = np.load('../data/X_train.npy'), np.load('../data/X_test.npy'), np.load('../data/y_train.npy'), np.load('../data/y_test.npy')
-    df_tot = pd.read_pickle('../data/df_tot.pandas')
+def import_data_train_test(dataset = None):
+    X_tot = np.load('../data/%s/X_tot.npy'%(dataset))
+    X_train, X_test, y_train, y_test = np.load('../data/%s/X_train.npy'%(dataset)), np.load('../data/%s/X_test.npy'%(dataset)), np.load('../data/%s/y_train.npy'%(dataset)), np.load('../data/%s/y_test.npy'%(dataset))
+    df_tot = pd.read_pickle('../data/%s/df_tot.pandas'%(dataset))
     return X_tot, df_tot, X_train, X_test, y_train, y_test
