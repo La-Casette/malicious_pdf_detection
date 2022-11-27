@@ -31,6 +31,15 @@ def kfold_cross_validation(model, X, y, k=5, scoring='accuracy'):
 def compute_accuracy(y_test, y_test_predicted):
     return metrics.accuracy_score(y_test, y_test_predicted)
 
+def compute_f1_score(y_test, y_test_predicted):
+    return metrics.f1_score(y_test, y_test_predicted)
+
+def compute_fpr(y_test, y_test_predicted):
+    return metrics.precision_score(y_test, y_test_predicted, pos_label=0)
+
+def get_false_positive(y_test, y_test_predicted):
+    return metrics.confusion_matrix(y_test, y_test_predicted)[0,1]
+
 def get_train_test_split(df):
     X_tot = df.iloc[:,:-1]
     y_tot = df.iloc[:,-1:]
