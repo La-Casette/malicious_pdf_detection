@@ -1,8 +1,6 @@
 import sklearn.metrics as metrics
-from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_validate
-import pandas as pd
-from sklearn.model_selection import train_test_split
+
 def compute_scores(y_test, y_test_predicted):
     """
         905: benign benign TN
@@ -16,13 +14,16 @@ def compute_scores(y_test, y_test_predicted):
     print('False negative: %d'%(knn_confmat[1, 0]))
     print('True negative: %d'%(knn_confmat[0, 0]))
 
-def false_negative_loss_function(clf, X, y):
-    y_pred = clf.predict(X)
-    fn = metrics.confusion_matrix(y, y_pred)[1,0]
-    f1 = metrics.f1_score(y, y_pred)
-    accuracy = metrics.accuracy_score(y, y_pred)
+def metrics_function(y_true, y_pred):
+    fn = metrics.confusion_matrix(y_true, y_pred)[1,0]
+    f1 = metrics.f1_score(y_true, y_pred)
+    accuracy = metrics.accuracy_score(y_true, y_pred)
     return {'false_neg':fn, 'f1_score':f1, 'accuracy_score':accuracy}
+
+def kfold_metrics(clf, X, y):
+    y_pred = clf.predict(X)
+    return metrics_function(y, y_pred)
     
 def kfold_cross_validation(model, X, y, k=5):
-    scores = cross_validate(model, X, y, cv=k, scoring=false_negative_loss_function)
+    scores = cross_validate(model, X, y, cv=k, scoring=kfold_metrics)
     return scores
