@@ -15,7 +15,7 @@ def compute_scores(y_test, y_test_predicted):
     print('True negative: %d'%(knn_confmat[0, 0]))
 
 def metrics_function(y_true, y_pred):
-    fn = metrics.confusion_matrix(y_true, y_pred)[1,0]
+    fn = (metrics.confusion_matrix(y_true, y_pred)[1,0])/(metrics.confusion_matrix(y_true, y_pred)[1,0] + metrics.confusion_matrix(y_true, y_pred)[1,1])
     f1 = metrics.f1_score(y_true, y_pred)
     accuracy = metrics.accuracy_score(y_true, y_pred)
     return {'false_neg':fn, 'f1_score':f1, 'accuracy_score':accuracy}
