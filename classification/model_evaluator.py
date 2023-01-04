@@ -1,5 +1,7 @@
 import sklearn.metrics as metrics
 from sklearn.model_selection import cross_validate
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import make_scorer
 
 def compute_scores(y_test, y_test_predicted):
     """
@@ -27,3 +29,17 @@ def kfold_metrics(clf, X, y):
 def kfold_cross_validation(model, X, y, k=5):
     scores = cross_validate(model, X, y, cv=k, scoring=kfold_metrics)
     return scores
+
+def grid_search_kfold_cv(X=None, y=None, model=None, params_grid=None, k=5):
+    fnr_lambda = lambda y,y_pred:get_fn(y, y_pred) / (get_fn(y, y_pred) + get_tp(y, y_pred))
+    accuracy_lambda = lambda y,y_pred:metrics.accuracy_score(y, y_pred)
+    scoring = {"fnr": make_scorer(score_func=fnr_lambda, greater_is_better=False), 
+               "accuracy": make_scorer(score_func=accuracy_lambda)}
+    estimator = GridSearchCV(estimator=model, param_grid=params_grid, cv=k, scoring=scoring, refit='fnr')
+    return estimator.fit(X,y)
+
+def get_fn(y, y_pred):
+    return metrics.confusion_matrix(y, y_pred)[1,0]
+
+def get_tp(y, y_pred):
+    return metrics.confusion_matrix(y, y_pred)[1,1]
