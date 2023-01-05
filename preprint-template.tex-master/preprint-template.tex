@@ -5,6 +5,7 @@
 % arara: xelatex
 
 %\documentclass{article} % One-column default
+\RequirePackage[2020-02-02]{latexrelease}
 \documentclass[twocolumn, switch]{article} % Method A for two-column formatting
 
 \usepackage{preprint}
@@ -154,12 +155,14 @@ See Section \ref{sec:relatedwork}.
 %%# DATASETS AND FEATURES #%%
 \section{Datasets and features}
 \label{sec:datasetsandfeatures}
-
 %%# SVM #%%
 \section{Support vector machines}
 \label{sec:svm}
 % Intro that motivates why we use SVM (citing papers of \ref{sec:relatedwork})
-
+Support Vector Machines are linear classifiers that look
+for maximum margin separation hyperplanes. The
+primal formulation of the soft-margin SVM problem
+consists in minimizing the function:
 \subsection{Linear SVM}
 % Few words about the linear SVM
 \paragraph{Problem  definition}
@@ -197,6 +200,10 @@ See Section \ref{sec:relatedwork}.
 %%# CONCLUSIONS #%%
 \section{Conclusions and future works}
 \label{sec:conclusions}
+
+%%# CONTRIBUTIONS #%%
+\section{Contributions}
+\label{sec:contributions}
 
 %%%%%%%%%%%% Supplementary Methods %%%%%%%%%%%%
 %\footnotesize
