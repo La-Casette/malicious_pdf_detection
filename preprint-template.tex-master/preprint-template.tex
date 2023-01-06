@@ -248,11 +248,90 @@ Summarizing the best results we obtained:
 Optimizing for the $FNR$ the hyperparameter we have selected is $C=6.67$.
 \subsection{Kernel SVM}
 % Why SVM are good: kernels
-\paragraph{RBF kernel}
-% How the RBF kernel works, gamma hyperparameter
+What it makes the SVMs particularly powerful is the way how the dual problem is defined. We are indeed able to embed a non-linear decision function that computes the scalar product between $x_i$ and $x_j$ in a higher dimensional space without needing to  explicitly compute the features expansion. A kernel function is defined as 
+\begin{center}
+	$k(x,y) = \Phi(x)^T\Phi(y)$
+\end{center}
+And the $J_D$ function is modified as:
+\begin{center}
+	$J_D(\alpha) = \sum_{i=1}^{n}\alpha_i -\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_jz_iz_jk(x_i,x_j)$
+\end{center}
+Also the inference step is modified accordingly:
+\begin{center}
+	$y_t = w^Tx_t + w_0 = \sum_{i=1}^{n}\alpha_iz_ik(x_t,x_i)$
+\end{center}
+We have implemented a Radial Basis Function (RBF) kernel that is defined as:
+\begin{center}
+	$k(x,y) = e^{-\gamma||x-y||^2}$
+\end{center}
+% TODO: explain gamma hyperparameter
 \subsubsection{Experiments}
 % Results obtained with the RBF kernel SVM (plots)
+The cross-validation of the model has now to take into account two different hyperparameters ($\gamma$ for the RBF kernel and $C$ for the dual SVM problem). 
+This time we exploited a grid search k-fold cross validation that makes use of the cross validation to train the model with each possible combinations of hyperparameters. The hyperparameters values we tried are:
+\begin{itemize}
+	\item $\gamma$: 10 values in $[10^{-6}, 1]$
+	\item $C$: 10 values in $[10^{-6}, 10]$
+\end{itemize}
+We now investigate the influence of both hyperparameters. What it's not displayed and analyzed in the plots is what happens with $C=10^{-6}$ and $\gamma=10^{-6}$, parameters under which the classifier performs a very poorly in terms of accuracy (around $54\%$) despite achieving a $FPR$ equal to $0\%$. However, this is not better than a dummy classifier that safely detects every PDF as malicious so it's not of interest in this project.
 
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{rbf_svm_gamma_accuracy_fnr.png}
+	\caption{Accuracy (top) and FNR (bottom) when $\gamma$ (colored lines) changes and $C$ changes}
+	\label{fig:rbfsvmgamma}
+\end{figure}
+
+In figure \ref{fig:rbfsvmgamma} it's clear that smaller values of $\gamma$ lead to obtain better results both in terms of Accuracy and FNR. The $\gamma$ parameter of the RBF kernel controls the width of the kernel, it determines how far the influence of a single training example reaches, and how smooth the decision boundary is. A lower value of gamma means a larger, less concentrated kernel, which can lead to smoother decision boundaries.
+
+We also investigated the role of the $C$ hyperparameter.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{rbf_svm_C_accuracy_fnr.png}
+	\caption{Accuracy (top) and FNR (bottom) when $C$ (colored lines) changes and $\gamma$ changes}
+	\label{fig:rbfsvmC}
+\end{figure}
+
+As we can observe in figure \ref{fig:rbfsvmC} the value of the $C$ hyperparameter has less influence on the model than $\gamma$. The $C$  hyperparameter controls the trade-off between the simplicity of the model (low bias, high variance) and the training error (low variance, high bias). A higher value of C means a higher penalty for misclassification while a lower value of C means a lower penalty for misclassification.\\
+When the value of $\gamma$ is sufficiently small the accuracy reaches the best values and the same happens for the FNR. The choice of $C$ has clearly less impact on the performances. 
+
+Overall the best values we have found from cross validation are:
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+	\hline
+	\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+	5.56     & 0.11         & 99.50\%           & 0.82\%       \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Performances on the test set}
+Finally, given the set of best hyperparameters found through cross validation on the entire training set we are going to asses the performances achieved on the test set.
+\subsubsection{Linear SVM}
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{C} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		6.67       & 99.06\%           & 1.58\%       \\ \hline
+	\end{tabular}
+	\caption{Linear SVM - Performances on the test set}
+\end{table}
+
+\subsubsection{Kernel SVM}
+Secondly we train a RBF SVM on the entire training set and we do the predictions on the entire testing set.
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+	\hline
+	\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+	5.56     & 0.11         & 99.50\%           & 0.82\%       \\ \hline
+	\end{tabular}
+	\caption{RBF SVM - Performances on the test set}
+\end{table}
 
 %%# DECISION TREE AND RANDOM FOREST #%%
 \section{Decision tree and random forest}
