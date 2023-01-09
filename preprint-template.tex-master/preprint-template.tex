@@ -133,30 +133,7 @@ See Section \ref{sec:relatedwork}.
 \label{sec:datasetsandfeatures}
 As the first step in building our model, we needed to obtain a dataset of PDFs to use for training and evaluation and we decided to use the Contagio dataset. It is a collection of malicious PDF files that has been widely used for research and testing purposes. The dataset was created by the security firm Mandiant and contains about 20000 PDF samples, including malware, phishing attacks, and other types of malicious content. The samples in the dataset are representative of the types of threats that are commonly encountered in the wild. 
 Next, we needed to extract the data from the PDFs in order to use it for training and evaluation. We chose to perform a static analysis, which does not require opening the PDFs in a reader. Indeed, we used a tool called PDFId to extract relevant information from the PDFs. PDFId characterizes each PDF by extracting the number of occurrences of specific keywords. This allows us to map each PDF into an array of 21 elements, with each element representing the count of a specific keyword. We are therefore working with samples of 21 integer features.
-We report here the features used with a short summary of their meaning and use:
-\begin{itemize}
-	\item obj: It is used to specify the start of an object in a PDF file. An object can be a variety of types of data, such as text, images, or executable code.
-	\item endobj: It is used to specify the end of an object in a PDF file.
-	\item stream: It is used to specify the start of a stream of data in a PDF file. A stream is a contiguous sequence of data that is usually compressed and can be a variety of types, such as text, images, or audio.
-	\item endstream: It terminates a \emph{stream}
-	\item xref: It is used to specify a cross-reference table in a PDF file.
-	\item trailer: It is used to specify the trailer of a PDF file. The trailer contains information about the structure of the PDF file.
-	\item startxref: It is used to specify the starting position of the cross-reference table in a PDF file. 
-	\item /Page: It is used to specify a page object in a PDF file. A page object represents a single page in the PDF document and contains information about the layout and content of the page.
-	\item /Encrypt: It is used to specify that a PDF file is encrypted.
-	\item /ObjStm: It is used to specify an object stream in a PDF file. An object stream is a stream of data that contains multiple objects, which are compressed and stored in a single stream to save space.
-	\item /JS: It is used to specify that a PDF file contains JavaScript code (that can malicious). 
-	\item /JavaScript: It is similar to the /JS keyword.
-	\item /AA: It is used to specify that a PDF file contains additional actions. Additional actions are additional instructions or triggers that are executed when certain events occur, such as when the PDF file is opened or a form is submitted.
-	\item /OpenAction: It is used to specify an action that is executed when a PDF file is opened. This action can be used to execute code or perform other tasks.
-	\item /AcroForm: It is used to specify that a PDF file contains interactive form fields that can be used to exfiltrate information from users.
-	\item /JBIG2Decode: It is used to specify that a PDF file contains JBIG2 encoded data.
-	\item /RichMedia: It is used to specify that a PDF file contains rich media content, such as audio or video.
-	\item /Launch: It is used to specify an action that is executed when a PDF file is opened. This action can be used to launch a program or open a file, and is often used to deliver malware or other malicious content.
-	\item /EmbeddedFile: It is used to specify that a PDF file contains an embedded file.
-	\item /XFA: It is used to specify that a PDF file contains an XFA (XML Forms Architecture) form.
-	\item /Colors: It is used to specify that a PDF file contains more than 16 million colors.
-\end{itemize}
+Among the keywords that we selected, some are related to the structure of the PDF file, such as obj and endobj, which mark the beginning and end of an object, and stream and endstream, which mark the beginning and end of a stream of data. We also included xref, trailer, and startxref, which pertain to the organization of the PDF file. Next, there are features related to the content of the PDF file: we included /Page, which specifies a page object in the PDF file, and /Encrypt. We also included /ObjStm, which denotes an object stream, and /JS and /JavaScript, which indicate the presence of JavaScript code. Additionally, we included features related to actions that can be triggered by the PDF file, such as /AA, /OpenAction, /XFA and /AcroForm, that could potentially exfiltrate information from users. We also included the features related to the types of data that may be present in the PDF file, such as /JBIG2Decode, /RichMedia, /Launch and /EmbeddedFile. Finally we also chose /Colors, which specifies the presence of more than 16 million colors
 
 The output of PDFId is then converted into a CSV file, which can be easily accessed using the numpy and pandas libraries. This CSV file serves as the basis for our data extraction pipeline, which we have implemented using the functions provided by PDFId. It is important to note that PDFId is a tool specifically designed for the analysis of malicious PDFs, as the 22 keywords it extracts are well known to be discriminant for PDF malware analysis. These keywords do not represent the full set of possible keywords that may appear in a PDF file.
 For our classification task, we will be performing a binary classification, with malicious PDFs being labelled as positive samples and benign PDFs being labelled as negative samples. This allows us to easily train and evaluate our models, as we only need to predict whether a given PDF is malicious or not.
