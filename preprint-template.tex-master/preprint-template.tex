@@ -131,7 +131,7 @@ See Section \ref{sec:relatedwork}.
 %%# DATASETS AND FEATURES #%%
 \section{Datasets and features}
 \label{sec:datasetsandfeatures}
-As the first step in building our model, we needed to obtain a dataset of PDFs to use for training and evaluation and we decided to use the Contagio dataset. It is a collection of malicious PDF files that has been widely used for research and testing purposes. The dataset was created by the security firm Mandiant and contains about 20000 PDF samples, including malware, phishing attacks, and other types of malicious content. The samples in the dataset are representative of the types of threats that are commonly encountered in the wild. 
+As the first step in building our model, we needed to obtain a dataset of PDFs to use for training and evaluation and we decided to use the Contagio dataset. It is a collection of malicious PDF files that has been widely used for research and testing purposes. The dataset was created by the security firm Mandiant and contains about 20000 PDF samples, including malware, phishing attacks, and other types of malicious content. The samples in the dataset are representative of the types of threats that are commonly encountered in the wild.
 Next, we needed to extract the data from the PDFs in order to use it for training and evaluation. We chose to perform a static analysis, which does not require opening the PDFs in a reader. Indeed, we used a tool called PDFId to extract relevant information from the PDFs. PDFId characterizes each PDF by extracting the number of occurrences of specific keywords. This allows us to map each PDF into an array of 21 elements, with each element representing the count of a specific keyword. We are therefore working with samples of 21 integer features.
 Among the keywords that we selected, some are related to the structure of the PDF file, such as obj and endobj, which mark the beginning and end of an object, and stream and endstream, which mark the beginning and end of a stream of data. We also included xref, trailer, and startxref, which pertain to the organization of the PDF file. Next, there are features related to the content of the PDF file: we included /Page, which specifies a page object in the PDF file, and /Encrypt. We also included /ObjStm, which denotes an object stream, and /JS and /JavaScript, which indicate the presence of JavaScript code. Additionally, we included features related to actions that can be triggered by the PDF file, such as /AA, /OpenAction, /XFA and /AcroForm, that could potentially exfiltrate information from users. We also included the features related to the types of data that may be present in the PDF file, such as /JBIG2Decode, /RichMedia, /Launch and /EmbeddedFile. Finally we also chose /Colors, which specifies the presence of more than 16 million colors
 
@@ -211,7 +211,7 @@ Summarizing the best results we obtained:
 Optimizing for the $FNR$ the hyperparameter we have selected is $C=6.67$.
 \subsection{Kernel SVM}
 % Why SVM are good: kernels
-What it makes the SVMs particularly powerful is the way how the dual problem is defined. We are indeed able to embed a non-linear decision function that computes the scalar product between $x_i$ and $x_j$ in a higher dimensional space without needing to  explicitly compute the features expansion. A kernel function is defined as 
+What it makes the SVMs particularly powerful is the way how the dual problem is defined. We are indeed able to embed a non-linear decision function that computes the scalar product between $x_i$ and $x_j$ in a higher dimensional space without needing to  explicitly compute the features expansion. A kernel function is defined as
 \begin{center}
 	$k(x,y) = \Phi(x)^T\Phi(y)$
 \end{center}
@@ -230,7 +230,7 @@ We have implemented a Radial Basis Function (RBF) kernel that is defined as:
 % TODO: explain gamma hyperparameter
 \subsubsection{Experiments}
 % Results obtained with the RBF kernel SVM (plots)
-The cross-validation of the model has now to take into account two different hyperparameters ($\gamma$ for the RBF kernel and $C$ for the dual SVM problem). 
+The cross-validation of the model has now to take into account two different hyperparameters ($\gamma$ for the RBF kernel and $C$ for the dual SVM problem).
 This time we exploited a grid search k-fold cross validation that makes use of the cross validation to train the model with each possible combinations of hyperparameters. The hyperparameters values we tried are:
 \begin{itemize}
 	\item $\gamma$: 10 values in $[10^{-6}, 1]$
@@ -257,16 +257,16 @@ We also investigated the role of the $C$ hyperparameter.
 \end{figure}
 
 As we can observe in figure \ref{fig:rbfsvmC} the value of the $C$ hyperparameter has less influence on the model than $\gamma$. The $C$  hyperparameter controls the trade-off between the simplicity of the model (low bias, high variance) and the training error (low variance, high bias). A higher value of C means a higher penalty for misclassification while a lower value of C means a lower penalty for misclassification.\\
-When the value of $\gamma$ is sufficiently small the accuracy reaches the best values and the same happens for the FNR. The choice of $C$ has clearly less impact on the performances. 
+When the value of $\gamma$ is sufficiently small the accuracy reaches the best values and the same happens for the FNR. The choice of $C$ has clearly less impact on the performances.
 
 Overall the best values we have found from cross validation are:
 
 \begin{table}[ht!]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
-	\hline
-	\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
-	5.56     & 0.11         & 99.50\%           & 0.82\%       \\ \hline
+		\hline
+		\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		5.56       & 0.11              & 99.50\%           & 0.82\%       \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -289,9 +289,9 @@ Secondly we train a RBF SVM on the entire training set and we do the predictions
 \begin{table}[ht!]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
-	\hline
-	\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
-	5.56     & 0.11         & 99.50\%           & 0.82\%       \\ \hline
+		\hline
+		\textbf{C} & \textbf{$\gamma$} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		5.56       & 0.11              & 99.50\%           & 0.82\%       \\ \hline
 	\end{tabular}
 	\caption{RBF SVM - Performances on the test set}
 \end{table}
@@ -299,28 +299,79 @@ Secondly we train a RBF SVM on the entire training set and we do the predictions
 %%# DECISION TREE AND RANDOM FOREST #%%
 \section{Decision tree and random forest}
 \label{sec:tree}
-The decision tree is a popular classification technique in which predictions are made in a sequence of single-attribute tests.
+\subsection{Decision Tree}
+The decision tree is a classification technique in which predictions are made in a sequence of single-attribute tests.
 
 Decision trees are used to evaluate the expected values or expected utility of competing alternatives. Each internal node in a decision tree represents a test on an attribute, and each branch represents the outcome of the test. The paths from the root to the leaf nodes represent classification rules, and the leaf nodes represent class labels.
-In this test, we evaluated the performance of a decision tree using various parameters such as tree depth, minimum number of samples per leaf, and maximum number of features. We found that adjusting these parameters had a significant impact on the false negative rate and the accuracy of the model. For example, as shown in Figure 1, we found that the optimal tree depth parameter was 15, which provided the best balance between model performance and overfitting.
-
+%TODO 
+%In this test, we evaluated the performance of a decision tree using various %parameters such as tree depth, minimum number of samples per leaf, and maximum %number of features. We found that adjusting these parameters had a significant %impact on the false negative rate and the accuracy of the model. For example, %as shown in Figure 1, we found that the optimal tree depth parameter was 15, %which provided the best balance between model performance and overfitting.
 \subsubsection{Experiments}
-
+We performed a k-fold cross validation with 5 folds in order to learn the best $max \space depth$ on the training set.
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{tree_accuracy_fnr.png}
+	\caption{Accuracy (left) and FNR (right) when $max \space depth$ changes}
+	\label{fig:treetrain}
+\end{figure}
+In figure \ref{fig:treetrain} we notice that TODO\\
+To summurize, the results we have obtained are reported in table \ref{tab:treetrain}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{max depth} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		15                 & 99.72\%           & 0.21\%       \\ \hline
+		9                  & 99.74\%           & 0.28\%       \\ \hline
+	\end{tabular}
+	\caption{Decision Tree - Optimal depths from cross validation}
+	\label{tab:treetrain}
+\end{table}
+As we did for the Linear SVM in section \ref{sec:svm} despite the model achieves the best accuracy with $max \space depth = 9$ we will choose as best parameter the one that achieves the lowest $FNR$ that is $max \space depth = 15$
 \subsection{Random forest}
-Random Forest is a machine learning algorithm that is used for both classification and regression tasks. It is an ensemble method, which means that it combines the predictions of multiple decision tree models to make a more accurate and stable prediction.
-To train a Random Forest model, multiple decision trees are trained on different samples of the data and their predictions are combined. This helps to reduce overfitting and improve the model's generalization ability. The algorithm is also robust to missing values, making it a versatile and widely used machine learning tool.
-In our analysis we chose this model because of its high accuracy and stability. It is known for performing well on a wide range of datasets and tasks.
-Also with Random Forest, we evaluated the performance varying parameters and in Figure we can see the results for maximum trees depth.
+Random Forest is an ensemble method, which means that it combines the predictions of multiple decision tree models to make a more accurate and stable predictions.
+To train a Random Forest model, multiple decision trees are trained on different samples of the data and their predictions are combined. This helps to reduce overfitting and improve the model's generalization ability.
 
 \subsubsection{Experiments}
+We performed a k-fold cross validation with 5 folds in order to learn the best $max \space depth$ on the training set.
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{randomforest_accuracy_fnr.png}
+	\caption{Accuracy (left) and FNR (right) when $max \space depth$ changes}
+	\label{fig:foresttrain}
+\end{figure}
+In figure \ref{fig:foresttrain} we notice that TODO\\
+To summurize, the results we have obtained are reported in table \ref{tab:foresttrain}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{max depth} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		16                 & 99.80\%           & 0.22\%       \\ \hline
+	\end{tabular}
+	\caption{Decision Tree - Optimal depths from cross validation}
+	\label{tab:foresttrain}
+\end{table}
 
+\subsubsection{Results on the test set}
+We finally trained both Decision Tree and Random Forest using the best model parameters learnt from cross validation.
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{Model} & \textbf{max depth} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		Decision Tree  & 15                 & 99.75\%           & 0.22\%       \\ \hline
+		Random Forest  & 16                 & 99.90\%           & 0.13\%       \\ \hline
+	\end{tabular}
+	\caption{Results on the test set for Decision Tree and Random Forest}
+	\label{tab:testtreeforest}
+\end{table}
 %%# KNN #%%
 \section{KNN}
 \label{sec:knn}
 K-Nearest Neighbors (KNN) is a simple yet powerful classification algorithm. It works by identifying the K number of training samples that are closest in distance to the input sample, and then assigning the input sample to the class of the majority of the K nearest neighbors. One of the key advantages of the KNN algorithm is its simplicity, as it requires little to no training to make predictions on new data. This is useful for our task, where the dataset is large and diverse and the goal is to identify patterns in the data.
 \subsection{Experiments}
-We performed a k-fold cross-validation with 5 folds. 
-To determine the optimal value of k (the number of nearest neighbors to consider), we conducted a grid search over a range of possible values ($k \in [1, 8]$). 
+We performed a k-fold cross-validation with 5 folds.
+To determine the optimal value of k (the number of nearest neighbors to consider), we conducted a grid search over a range of possible values ($k \in [1, 8]$).
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\linewidth]{knn_accuracy_fnr.png}
@@ -333,9 +384,9 @@ To visualize the effect of increasing k on the performance of our model, we plot
 \begin{table}[ht!]
 	\centering
 	\begin{tabular}{|l|l|l|}
-	\hline
-	\textbf{K} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
-	1          & 99.67\%           & 0.82\%       \\ \hline
+		\hline
+		\textbf{K} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		1          & 99.67\%           & 0.82\%       \\ \hline
 	\end{tabular}
 	\caption{KNN - results on training set}
 \end{table}
@@ -344,9 +395,9 @@ To visualize the effect of increasing k on the performance of our model, we plot
 \begin{table}[ht!]
 	\centering
 	\begin{tabular}{|l|l|l|}
-	\hline
-	\textbf{K} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
-	1          & 99.68\%           & 0.36\%       \\ \hline
+		\hline
+		\textbf{K} & \textbf{Accuracy} & \textbf{FNR} \\ \hline
+		1          & 99.68\%           & 0.36\%       \\ \hline
 	\end{tabular}
 	\caption{KNN - results on test set}
 \end{table}
@@ -356,6 +407,22 @@ Our results demonstrate that KNN is an effective technique for detecting malicio
 
 %%# FINAL RESULTS #%%
 \section{Final results}
+We have summarized the results of all our classifiers in table \ref{tab:finalresults}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|c|ll|ll|}
+		\hline
+		\multicolumn{1}{|l|}{}                                                  & \multicolumn{2}{c|}{\textit{\textbf{Training}}} & \multicolumn{2}{c|}{\textit{\textbf{Testing}}}                                                         \\ \hline
+		\textbf{Model}                                                          & \multicolumn{1}{l|}{\textbf{Accuracy}}          & \textbf{FNR}                                   & \multicolumn{1}{l|}{\textbf{Accuracy}} & \textbf{FNR} \\ \hline
+		\begin{tabular}[c]{@{}c@{}}Tree\\ $depth=15$\end{tabular}               & \multicolumn{1}{l|}{99.72\%}                    & 0.21\%                                         & \multicolumn{1}{l|}{99.75\%}           & 0.22\%       \\ \hline
+		\begin{tabular}[c]{@{}c@{}}Forest\\ $depth=16$\end{tabular}             & \multicolumn{1}{l|}{99.80\%}                    & 0.22\%                                         & \multicolumn{1}{l|}{99.90\%}           & 0.13\%       \\ \hline
+		\begin{tabular}[c]{@{}c@{}}KNN\\ $k=1$\end{tabular}                     & \multicolumn{1}{l|}{99.67\%}                    & 0.82\%                                         & \multicolumn{1}{l|}{99.68\%}           & 0.36\%       \\ \hline
+		\begin{tabular}[c]{@{}c@{}}LSVM\\ $C=6.67$\end{tabular}                 & \multicolumn{1}{l|}{99.03\%}                    & 1.35\%                                         & \multicolumn{1}{l|}{99.06\%}           & 1.58\%       \\ \hline
+		\begin{tabular}[c]{@{}c@{}}KSVM\\ $C=5.56$\\ $\gamma=0.11$\end{tabular} & \multicolumn{1}{l|}{99.50\%}                    & 0.82\%                                         & \multicolumn{1}{l|}{99.73\%}           & 0.36\%       \\ \hline
+	\end{tabular}
+	\caption{Overall results of all the models (LSVM: linear SVM, KSVM: RBF Kernel SVM)}
+\end{table}
+
 \label{sec:finalresults}
 
 %%# ATTACKS TO CLASSIFIERS #%%
@@ -374,7 +441,7 @@ The gradient descent attack will converge to the minimum iteratively. Following 
 \begin{center}
 	$x^{t+1} = x_t - \mu_t\nabla_xf_{\Phi}(x_t)$
 \end{center}
-By recovering that $w = \nabla_x(w^Tx_t+w_0)$ for a linear SVM it can be derived that $w = \nabla_xf_{\Phi}(x_t)$ in a kernel SVM. 
+By recovering that $w = \nabla_x(w^Tx_t+w_0)$ for a linear SVM it can be derived that $w = \nabla_xf_{\Phi}(x_t)$ in a kernel SVM.
 We can thus obtaing the expression for a RBF kernel SVM from the dual problem definition and properties:
 \begin{center}
 	$\nabla_xf_{\Phi}(x_t) = \sum_{i \in SV}^{}\alpha_iz_i\nabla_xk(x_i,x_t)$
