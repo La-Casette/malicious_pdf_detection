@@ -4,12 +4,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import make_scorer
 
 def compute_scores(y_test, y_test_predicted):
-    """
-        905: benign benign TN
-        6: benign predicted as malign FP
-        8: malign predicted as benign FN
-        1102: malign malign TP
-    """
     knn_confmat = metrics.confusion_matrix(y_test, y_test_predicted)
     print('False positive: %d'%(knn_confmat[0, 1]))
     print('True positive: %d'%(knn_confmat[1, 1]))
