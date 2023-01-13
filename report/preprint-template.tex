@@ -33,7 +33,8 @@
 \usepackage[colorlinks = true,
             linkcolor = purple,
             urlcolor  = blue,
-            citecolor = cyan,
+            citecolor = black,
+			allcolors = black,
             anchorcolor = black]{hyperref}	% Color links to references, figures, etc.
 \usepackage{booktabs} 		% professional-quality tables
 \usepackage{nicefrac}		% compact symbols for 1/2, etc.
@@ -190,7 +191,7 @@ We have cross-validated the linear model by trying $10$ different values for the
 \end{figure}
 
 % comments on linear SVM
-The plot in figure \ref{fig:linearsvm} shows that the variations in terms of Accuracy and FNR when different values of $C$ are used to train the linear SVM are not that evident. Here the results obtained with $C=10^{-6}$ where not reported because of the significatively worse results ($88.67\%$ of Accuracy and $2.94\%$ of FNR). \\
+The plot in Figure \ref{fig:linearsvm} shows that the variations in terms of Accuracy and FNR when different values of $C$ are used to train the linear SVM are not that evident. Here the results obtained with $C=10^{-6}$ where not reported because of the significatively worse results ($88.67\%$ of Accuracy and $2.94\%$ of FNR). \\
 
 \begin{table}[ht!]
 	\centering
@@ -232,8 +233,8 @@ We investigated the influence of both hyperparameters. What it is not displayed 
 	\label{fig:rbfsvmgamma}
 \end{figure}
 
-In figure \ref{fig:rbfsvmgamma} it's clear that smaller values of $\gamma$ lead to obtain better results both in terms of Accuracy and FNR. The $\gamma$ parameter of the RBF kernel controls its width and the shape of the decision boundary. A lower value of gamma means a larger, less concentrated kernel, which can lead to smoother decision boundaries.\newline
-In contrast, the value of the $C$ hyperparameter has clearly less influence on the model than $\gamma$ as we can observe in figure \ref{fig:rbfsvmgamma}. What it does is controlling the trade-off between the simplicity of the model (low bias, high variance) and the training error (low variance, high bias). A higher value of $C$ means a higher penalty for misclassification and the opposite for a lower value.
+In Figure \ref{fig:rbfsvmgamma} it's clear that smaller values of $\gamma$ lead to obtain better results both in terms of Accuracy and FNR. The $\gamma$ parameter of the RBF kernel controls its width and the shape of the decision boundary. A lower value of gamma means a larger, less concentrated kernel, which can lead to smoother decision boundaries.\newline
+In contrast, the value of the $C$ hyperparameter has clearly less influence on the model than $\gamma$ as we can observe in Figure \ref{fig:rbfsvmgamma}. What it does is controlling the trade-off between the simplicity of the model (low bias, high variance) and the training error (low variance, high bias). A higher value of $C$ means a higher penalty for misclassification and the opposite for a lower value.
 When $\gamma$ is sufficiently small the Accuracy reaches the best values and the same happens for the FNR.
 
 Overall the best values we have found from cross validation are:
@@ -330,7 +331,7 @@ To determine the optimal value of $K$ (the number of nearest neighbors to consid
 	\label{fig:knntrain}
 \end{figure}
 The results of this search shows, as expected, that the best performances were achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect will not be really high.
-To visualize the effect of increasing $K$ on the performance of our model, we plotted in figure \ref{fig:knntrain} the accuracy and FNR as a function of $K$. The performance of the model decreases slightly as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best result obtained is:
+To visualize the effect of increasing $K$ on the performance of our model, we plotted in Figure \ref{fig:knntrain} the accuracy and FNR as a function of $K$. The performance of the model decreases slightly as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best result obtained is:
 \begin{center}
 	$K=1 \quad Accuracy=99.67\% \quad FNR=0.82\%$
 \end{center}
@@ -369,7 +370,7 @@ The table shows that, as widely discussed in the previos sections, the model tha
 	\vspace{-5mm}
 \end{table}
 
-Finally we also plotted the ROC curves for all the models. In figure \ref{fig:roc} we can  confirm the results showed in table \ref{tab:finalresults}.
+Finally we also plotted the ROC curves for all the models. In Figure \ref{fig:roc} we can  confirm the results showed in table \ref{tab:finalresults}.
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\x\linewidth]{roc.png}
