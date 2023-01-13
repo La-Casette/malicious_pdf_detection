@@ -467,7 +467,7 @@ The results we obtain are overall satisfying because the classifier is able to d
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\x\linewidth]{adv_learning.png}
-	\caption{Adversarial Lerning defense effectivness in different epochs: although the different spikes the number of evadable PDFs of Training Set reduces after each iteration}
+	\caption{Adversarial Learning defense effectivness in different epochs: although the different spikes the number of evadable PDFs of Training Set reduces after each iteration}
 	\label{fig:advlearn}
 \end{figure}
 The plot in Figure \ref{fig:advlearn} shows that the number of PDFs that can be evaded in the Training Set reaches $0$ at iteration $69$.\\
@@ -483,15 +483,21 @@ We can also see in Figure \ref{fig:improved} how the features of the improved da
 \section{Conclusions and future works}
 \label{sec:conclusions}
 \paragraph{Classifiers}
-To conclude, the model that performs better is the Random Forest both in terms of Accuracy and FNR. Also really good results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patters using the most discriminant features. Further improvement could be done in order to achieve even lower values of FNR also by implementig other dimensionality reduction techniques.
-
+To conclude, the model that performs better is the Random Forests both in terms of Accuracy and FNR. Comparable results are achieved by the others and the use of PDFiD makes all the algorithms efficient in detecting patters using the most discriminant features. Further improvement could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited toghether with other types of metrics that take into account both the Accuracy and the FNR.
+\vspace{-10pt}
 \paragraph{Evasion Attacks}
-The evasion attack that we have mostly studied is the one against the Decision Tree that shows good results against the Training Set in terms of success rate. The defense mechanism is also really effective using the Adversarial Learning algorithm.
+The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented the defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset nedded to mitigate the attack.
 
 %%# CONTRIBUTIONS #%%
 \section{Contributions}
 \label{sec:contributions}
-Lorenzo Ippolito worked on Decision Tree and Random Forest classifiers, Martino Picasso on KNN and Mattia Rosso worked on SVM classifier. We collaborated in features extraction, evasion attacks and countermeasures.
+Contributions of each member:
+\begin{itemize}
+	\item L. Ippolito worked on Decision Trees and Random Forests classifiers carefully exploring all the model parameters. 
+	\item M. Picasso studied the KNN classifier to better understand the reason why $K=1$ is the best performing parameter.
+	\item M. Rosso worked on SVM classifier investigating the role of the different hyperparameters and the dual formulation of the soft margin SVM to be used in the evasion attacks.
+\end{itemize}
+We collaborated both on features extraction and choice of the model validation approach. After having assessed the performances of the models we collaborated on designing the evasion attacks algorithms and countermeasueres.
 
 %%%%%%%%%%%% Supplementary Methods %%%%%%%%%%%%
 %\footnotesize
