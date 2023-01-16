@@ -128,22 +128,22 @@
 
 %%%# INTRODUCTION #%%
 \section{Introduction}
-PDF (Portable Document Format) is a file format used for exchanging and sharing documents. It can contain various types of elements, such as text, images, multimedia, and executable code. Keywords, also known as actions or triggers, specify the different types of contents and they can be used to detect whether the file is malicious or benign. In addition, PDF files may include also fonts, annotations, and form fields, which can be exploited for malicious purposes. We implemented four different binary classifiers to analyze their performances and to prove which one achieves the best results in terms of Accuracy and False Negative Rate. The task is a binary classification, with malicious PDFs labelled as Positive and Benign PDFs labelled as Negative. We also investigated evasion techniques against our classifiers, concluding the work with the implementation of a countermeasure algorithm known as Adversarial Learning.
+PDF (Portable Document Format) is a file format used for exchanging and sharing documents. It can contain various types of elements, such as text, images, multimedia, and executable code. Keywords, also known as actions or triggers, specify the different types of contents and they can be used to detect whether the file is malicious or benign. In addition, PDF files may include also fonts, annotations and form fields, which can be exploited for malicious purposes. We implemented four different binary classifiers to analyze their performances and to prove which one achieves the best results in terms of Accuracy and False Negative Rate. The task is a binary classification, with malicious PDFs labelled as Positive and Benign PDFs labelled as Negative. We also investigated evasion techniques against our classifiers, concluding the work with the implementation of a countermeasure algorithm known as Adversarial Learning.
 
 
 %%# RELATED WORK #%%
 \section{Related work}
 \label{sec:relatedwork}
-We have adopted the Contagio dataset \cite{Contagio} as benchmark to train and test our models. It is one of the most considered data sources for many of the publications on the topic. Among the ones we have taken into account, Maiorca et al. \cite{maiorca_giacinto_corona_1970} extract data with PDFiD \cite{PDFiD} and use SVM and Random Forests,  Cuan et al. \cite{cuan_damien_delaplace_valois_2018} use PDFiD, train a RBF SVM and also explain how to perform evasion attacks and relative countermeasures. In \cite{li_liu_yan_yang_2022}, Li et al. explain the iterative Gradient Descent attack algorithm against RBF SVM.
+We have adopted the Contagio dataset \cite{Contagio} as benchmark to train and test our models. It is one of the most considered data source for many of the publications on the topic. Among the ones we have taken into account, Maiorca et al. \cite{maiorca_giacinto_corona_1970} extract data with PDFiD \cite{PDFiD} and use SVM and Random Forests,  Cuan et al. \cite{cuan_damien_delaplace_valois_2018} use PDFiD, train a RBF SVM and also explain how to perform evasion attacks and relative countermeasures. In \cite{li_liu_yan_yang_2022}, Li et al. explain the iterative Gradient Descent attack algorithm against RBF SVM.
 
 %%# DATASETS AND FEATURES #%%
 \section{Datasets and features}
 \label{sec:datasetsandfeatures}
-As first step in building our model, we needed to obtain a dataset of PDFs to use for training and evaluation and we adopted the Contagio dataset. It is a collection of malicious PDF files that has been widely used for research and testing purposes. The dataset contains $20209$ PDF samples ($11100$ Malicious and $9109$ Benign), including malware, phishing attacks and other types of malicious contents. The samples in the dataset are representative of the types of threats that are commonly encountered.\newline
+As first step in building our model, we needed to obtain a dataset of PDFs to use for training and testing and we adopted the Contagio dataset. It is a collection of malicious and benign PDF files that has been widely used for research and testing purposes. The dataset contains $20209$ PDF samples ($11100$ Malicious and $9109$ Benign), including malware, phishing attacks and other types of malicious contents. The samples in the dataset are representative of the types of threats that are commonly encountered.\newline
 We chose to perform a static analysis, which does not require opening the PDFs in a reader. Indeed, we used a tool called PDFiD to extract relevant information from the PDFs. PDFiD characterizes each PDF by extracting the number of occurrences of specific keywords. This allowed us to map each PDF into an array of 21 elements that became our features vector.\newline
 Among the keywords that we selected, some are related to the structure of the PDF file, such as \textit{obj} and \textit{endobj}, which mark the beginning and end of an object, \textit{stream} and \textit{endstream}, which mark the beginning and end of a stream of data. We also included \textit{xref}, \textit{trailer}, and \textit{startxref}, which pertain to the organization of the file. Next, there are features related to the content of the PDF: we added \textit{/Page}, which specifies a page object in the file, and \textit{/Encrypt}. We also included \textit{/ObjStm}, which denotes an object stream, \textit{/JS} and \textit{/JavaScript}, which indicate the presence of JavaScript code. Additionally, we selected features related to actions that can be triggered by the PDF, such as \textit{/AA}, \textit{/OpenAction}, \textit{/XFA} and \textit{/AcroForm}, that could potentially exfiltrate information from users. We also included the features related to the types of data that may be present in the file, such as \textit{/JBIG2Decode}, \textit{/RichMedia}, \textit{/Launch} and \textit{/EmbeddedFile}. Finally we also chose \textit{/Colors}, which specifies the presence of more than 16 million colors.\newline
 The output of PDFiD is then converted into a CSV file, which can be easily accessed using the \texttt{numpy} and \texttt{pandas} Python libraries. This CSV file serves as the basis for our data extraction pipeline, which we have implemented using the functions provided by PDFiD. It is important to note that the keywords we selected are well known to be discriminant for PDF malware analysis but they do not represent the full set that may appear in a PDF file.\newline
-The plot in Fig. \ref{fig:parallel} shows that the features distribution is substantialy different between Benign and Malicious PDFs.
+The plot in Fig. \ref{fig:parallel} shows that the features distribution is substantially different between Benign and Malicious PDFs.
 
 \begin{figure}[ht!]
 	\centering
@@ -162,7 +162,7 @@ The plot in Fig. \ref{fig:parallel} shows that the features distribution is subs
 \end{figure}
 
 \subsection{Model Validation}
-We statically split the dataset in Train and Test using a stratified approach supplied by the \texttt{sklearn} library \cite{scikit-learn}. The Training Set, which consists of 80\% of the samples, is used to train and validate the models with a k-fold cross-validation approach (that, using $k=5$, leads to an evaluation set of $16\%$ of the total samples). The Test Set, which consists of 20\% of the entire dataset, is used to make final considerations about the performance of the models trained with the best parameters/hyperparameters.
+We statically split the dataset in Train and Test using a stratified approach supplied by the \texttt{sklearn} library \cite{scikit-learn}. The Training Set, which consists of 80\% of the samples, is used to train and validate the models with a k-fold cross-validation approach. The Test Set, which consists of 20\% of the entire dataset, is used to make final considerations about the performance of the models trained with the best parameters/hyperparameters.
 To evaluate our models, we used two metrics: the False Negative Rate (FNR) and the Accuracy defined as:
 \begin{figure}[ht]
 	\begin{align*}
@@ -224,12 +224,12 @@ What makes the SVM particularly powerful is the way the dual problem is defined,
 \label{sub:expsvm}
 % Results obtained with the RBF kernel SVM (plots)
 The cross-validation of the model took into account two different hyperparameters ($\gamma$ of the RBF kernel and $C$ of the dual SVM problem).
-This time we exploited a grid search k-fold cross-validation that trains the model with each possible combinations of hyperparameters. The values we tried are:
+This time we exploited a grid search k-fold cross-validation that trains the model with each possible combination of hyperparameters. The values we tried are:
 \begin{itemize}
 	\item $\gamma$: 10 values in $[10^{-6}, 1]$
 	\item $C$: 10 values in $[10^{-6}, 10]$
 \end{itemize}
-We investigated the influence of both hyperparameters. What it is not displayed and analyzed in the plots is what happens with $C=10^{-6}$ and $\gamma=10^{-6}$, values under which the classifier performs very poorly in terms of Accuracy (around $54\%$) despite achieving a $FNR$ equal to $0\%$. However, this is not better than a dummy classifier that safely detects every PDF as Malicious, hence it is not of interest in this project.
+We investigated the influence of both hyperparameters. What it is not displayed and analyzed in the plots is what happens with $C=10^{-6}$ and $\gamma=10^{-6}$, values that makes the classifier performing very poorly in terms of Accuracy (around $54\%$) despite achieving a $FNR$ equal to $0\%$. However, this is not better than a dummy classifier that safely detects every PDF as Malicious, hence it is not of interest in this project.
 
 \begin{figure}[ht!]
 	\centering
@@ -238,7 +238,7 @@ We investigated the influence of both hyperparameters. What it is not displayed 
 	\label{fig:rbfsvmgamma}
 \end{figure}
 
-From Fig. \ref{fig:rbfsvmgamma} it is clear that smaller values of $\gamma$ lead to obtain better results both in terms of Accuracy and FNR. The $\gamma$ parameter of the RBF kernel controls its width and the shape of the decision boundary. A lower value of gamma means a larger, less concentrated kernel, which can lead to smoother decision boundaries.\newline
+From Fig. \ref{fig:rbfsvmgamma} it is clear that smaller values of $\gamma$ lead to obtain better results both in terms of Accuracy and FNR. The $\gamma$ parameter of the RBF kernel controls its width and the shape of the decision boundary. A lower value of $\gamma$ means a larger, less concentrated kernel, which can lead to smoother decision boundaries.\newline
 In contrast, the value of the $C$ hyperparameter has clearly less influence on the model than $\gamma$, as we can observe in Fig. \ref{fig:rbfsvmgamma}. It controls the trade-off between the simplicity of the model (low bias, high variance) and the training error (low variance, high bias). A higher value of $C$ means a higher penalty for misclassification.
 When $\gamma$ is sufficiently small, the Accuracy reaches the best values and the same happens for the FNR.
 Overall the best values we have found from cross-validation are:
@@ -260,7 +260,7 @@ The RBF SVM on the entire Test Set achieves these results:
 \begin{center}
 	$C=5.56 \quad \gamma=0.11 \quad Accuracy=99.73\% \quad FNR=0.36\%$
 \end{center}
-Here, in constrast with the linear model, we obtained better results both in terms of Accuracy and FNR.
+Here, in contrast with the linear model, we obtained better results both in terms of Accuracy and FNR.
 %%# DECISION TREE AND RANDOM FOREST #%%
 \section{Decision Trees and Random Forests}
 \label{sec:tree}
@@ -296,7 +296,7 @@ Despite the model achieves the best Accuracy with $max\_depth = 9$, we chose $ma
 
 \subsection{Random Forests}
 Random Forests is an ensemble method that combines the predictions of multiple Decision Trees models to make more accurate and stable predictions.
-To train a Random Forests model, multiple Decision Trees are trained on different samples of the data and their predictions are combined. This helps to reduce overfitting and improve the model's generalization ability.
+To train a Random Forests model, multiple Decision Trees are trained on different samples of the data and their predictions are combined. This helps to reduce overfitting and to improve the model's generalization ability.
 
 \subsubsection{Experiments}
 \label{sub:randomforest}
@@ -308,7 +308,7 @@ We performed a k-fold cross-validation with 5 folds in order to learn the best m
 	\caption{Accuracy (left) and FNR (right) when $max\_depth$ increases.}
 	\label{fig:foresttrain}
 \end{figure}
-The best obtained result is:
+The best obtained results are:
 \begin{center}
 	$max\_depth=16 \quad Accuracy=99.80\% \quad FNR=0.22\%$
 \end{center}
@@ -334,9 +334,10 @@ To determine the optimal value of $K$ (the number of nearest neighbors to consid
 	\includegraphics[width=\x\linewidth]{knn_accuracy_fnr.png}
 	\caption{Accuracy (left) and FNR (right) when $K$ increases.}
 	\label{fig:knntrain}
+	\vspace{-10pt}
 \end{figure}
 The results of this search shows, as expected, that the best performances are achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect is not really high.
-To visualize the effect of increasing $K$ on the performance of our model, we plotted in Fig. \ref{fig:knntrain} the Accuracy and FNR as a function of $K$. The performance of the model slightly decreases as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best result obtained is:
+To visualize the effect of increasing $K$ on the performance of our model, we plotted in Fig. \ref{fig:knntrain} the Accuracy and FNR as a function of $K$. The performance of the model slightly decreases as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best results obtained are:
 \begin{center}
 	$K=1 \quad Accuracy=99.67\% \quad FNR=0.82\%$
 \end{center}
@@ -412,9 +413,9 @@ To better get the idea behind the attack, we trained a RBF SVM ($C=1$, $\gamma=0
 	\includegraphics[width=\x\linewidth]{svmattack.png}
 	\caption{Decision boundary of RBF SVM ($C=1$, $\gamma=0.1$) on $PCA=2$ dataset (left), Gradient Descent attack on a random Malicious PDF (right). (Blue: Benign, Red: Malicious).}
 	\label{fig:svmattack}
+	\vspace{-5mm}
 \end{figure}
 We only inspected the working mechanism of this evasion attack by trying to successfully craft Benign PDFs from malicious ones.
-
 \subsection{Attack against Decision Trees}
 \label{subsec:tree}
 We also investigated an attack against the Decision Trees classifier. Firstly we found a new way to craft Malicious PDFs that are detected as Benign, using the approach explained in the Pseudocode \ref{alg:evasion}.
@@ -445,7 +446,7 @@ We also investigated an attack against the Decision Trees classifier. Firstly we
 With a threshold $t=50$ we obtained a success rate of evasion attack on the Training Set equal to $91.28\%$.
 
 \subsection{Adversarial Learning}
-In order to improve the strenght of the Decision Trees classifier against the attack procedure in \ref{subsec:tree}, we implemented a defense mechanism similar to what has been implemented by Cuan et al. in \cite{cuan_damien_delaplace_valois_2018}.
+In order to improve the strength of the Decision Trees classifier against the attack procedure in \ref{subsec:tree}, we implemented a defense mechanism similar to what has been presented by Cuan et al. in \cite{cuan_damien_delaplace_valois_2018}.
 It is called Adversarial Learning and the algorithm is shown in Pseudocode \ref{alg:advlearn}.
 
 \begin{algorithm}
@@ -468,12 +469,13 @@ It is called Adversarial Learning and the algorithm is shown in Pseudocode \ref{
 \end{algorithm}
 
 The results we obtained are overall satisfying because the classifier is able to defend perfectly against our evasion algorithm.
-
+\vspace{3mm}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\x\linewidth]{adv_learning.png}
-	\caption{Adversarial Learning defense effectivness in different iterations: although the different spikes, the number of evadable PDFs of Training Set reduces progressively and reaches $0$.}
+	\caption{Adversarial Learning defense effectiveness in different iterations: although the different spikes, the number of evadable PDFs of Training Set reduces progressively and reaches $0$.}
 	\label{fig:advlearn}
+	\vspace{2mm}
 \end{figure}
 The plot in Fig. \ref{fig:advlearn} shows that the number of PDFs that can be evaded in the Training Set reaches $0$ at iteration $69$.\\
 We can also see in Fig. \ref{fig:improved} how the features of the improved dataset (the ones obtained adding the crafted PDFs to the original Training Dataset) have been modified to defend against this attack.
@@ -481,28 +483,30 @@ We can also see in Fig. \ref{fig:improved} how the features of the improved data
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\x\linewidth]{hist_train_improved.png}
-	\caption{Difference of features frequencies between $X_{train}$ and $X_{train}^{imp}$ (logarithmic scale).}
+	\caption{Differences of features frequencies between $X_{train}$ and $X_{train}^{imp}$ (logarithmic scale).}
 	\label{fig:improved}
+	\vspace{5mm}
 \end{figure}
+
 %%# CONCLUSIONS #%%
 \section{Conclusions and future works}
 \label{sec:conclusions}
 \paragraph{Classifiers}
-To conclude, the model that performs better is the Random Forests, both in terms of Accuracy and FNR. Comparable results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patterns using the most discriminant features. Further improvements could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited toghether with other types of metrics that take into account both the Accuracy and the FNR.
-\vspace{-10pt}
+To conclude, the model that performs better is the Random Forests, both in terms of Accuracy and FNR. Comparable results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patterns using the most discriminant features. Further improvements could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited together with other types of metrics that take into account both the Accuracy and the FNR.
+\vspace{-5pt}
 \paragraph{Evasion Attacks}
 The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented the defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset needed to mitigate the attack.
-
+%\\~\\
 %%# CONTRIBUTIONS #%%
 \section{Contributions}
 \label{sec:contributions}
 These are the contributions of each member:
 \begin{itemize}
-	\item M. Rosso worked on SVM classifiers investigating the role of the different hyperparameters and the formulation of the dual soft margin SVM problem to be used in the evasion attacks.
-	\item L. Ippolito worked on Decision Trees and Random Forests classifiers carefully exploring all the model parameters and the presence of overfitting.
+	\item M. Rosso worked on SVM classifiers, investigating the role of the different hyperparameters and the formulation of the dual soft margin SVM problem to be used in the evasion attacks.
+	\item L. Ippolito worked on Decision Trees and Random Forests classifiers, carefully exploring all the model parameters and the presence of overfitting.
 	\item M. Picasso studied the KNN classifier to better understand the reason why $K=1$ is the best performing parameter.
 \end{itemize}
-We collaborated as a team both in the features extraction phase and on the choice of the model validation approach. After having assessed the performances of all the models, we worked toghether on designing the evasion attacks algorithms and the countermeasures.
+We collaborated as a team both in the features extraction phase and on the choice of the model validation approach. After having assessed the performances of all the models, we worked together on designing the evasion attacks algorithms and the countermeasures.
 \\~\\
 The project directory can be found at:\newline
 \footnotesize{\url{https://github.com/La-Casette/malicious_pdf_detection}}
