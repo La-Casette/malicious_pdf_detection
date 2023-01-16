@@ -336,7 +336,7 @@ To determine the optimal value of $K$ (the number of nearest neighbors to consid
 	\label{fig:knntrain}
 	\vspace{-10pt}
 \end{figure}
-The results of this search shows, as expected, that the best performances are achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect is not really high.
+The results of this search show, as expected, that the best performances are achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect is not really high.
 To visualize the effect of increasing $K$ on the performance of our model, we plotted in Fig. \ref{fig:knntrain} the Accuracy and FNR as a function of $K$. The performance of the model slightly decreases as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best results obtained are:
 \begin{center}
 	$K=1 \quad Accuracy=99.67\% \quad FNR=0.82\%$
@@ -396,7 +396,7 @@ a features vector $x$ characterizing a Malicious PDF correctly classified, our g
 	$||x-x'||_1 = \sum_{i=1}^{d}x_i-x_i'$
 \end{center}
 
-The Gradient Descent attack converges to the minimum iteratively. Following the approach of Li et al. in \cite{li_liu_yan_yang_2022}, the feature vector is moved in the negative direction of the normal to the decision boundary, meaning that the Gradient Descent update step becomes:
+The Gradient Descent attack converges to the minimum iteratively. Following the approach of Li et al. in \cite{li_liu_yan_yang_2022}, the features vector is moved in the negative direction of the normal to the decision boundary, meaning that the Gradient Descent update step becomes:
 
 \begin{center}
 	$x_{t+1} = x_t - \mu_t\nabla_xf_{\Phi}(x_t)$
@@ -415,7 +415,8 @@ To better get the idea behind the attack, we trained a RBF SVM ($C=1$, $\gamma=0
 	\label{fig:svmattack}
 	\vspace{-5mm}
 \end{figure}
-We only inspected the working mechanism of this evasion attack by trying to successfully craft Benign PDFs from malicious ones.
+We only inspected the working mechanism of this evasion attack by trying to successfully craft Benign PDFs from m
+Malicious ones.
 \subsection{Attack against Decision Trees}
 \label{subsec:tree}
 We also investigated an attack against the Decision Trees classifier. Firstly we found a new way to craft Malicious PDFs that are detected as Benign, using the approach explained in the Pseudocode \ref{alg:evasion}.
@@ -443,7 +444,7 @@ We also investigated an attack against the Decision Trees classifier. Firstly we
 	}
 \end{algorithm}
 
-With a threshold $t=50$ we obtained a success rate of evasion attack on the Training Set equal to $91.28\%$.
+With a threshold $t=50$ we obtained a success rate of the evasion attack on the Training Set equal to $91.28\%$.
 
 \subsection{Adversarial Learning}
 In order to improve the strength of the Decision Trees classifier against the attack procedure in \ref{subsec:tree}, we implemented a defense mechanism similar to what has been presented by Cuan et al. in \cite{cuan_damien_delaplace_valois_2018}.
@@ -473,7 +474,7 @@ The results we obtained are overall satisfying because the classifier is able to
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\x\linewidth]{adv_learning.png}
-	\caption{Adversarial Learning defense effectiveness in different iterations: although the different spikes, the number of evadable PDFs of Training Set reduces progressively and reaches $0$.}
+	\caption{Adversarial Learning defense effectiveness in different iterations: despite some spikes, the number of evadable PDFs of Training Set reduces progressively and reaches $0$.}
 	\label{fig:advlearn}
 	\vspace{2mm}
 \end{figure}
@@ -495,7 +496,7 @@ We can also see in Fig. \ref{fig:improved} how the features of the improved data
 To conclude, the model that performs better is the Random Forests, both in terms of Accuracy and FNR. Comparable results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patterns using the most discriminant features. Further improvements could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited together with other types of metrics that take into account both the Accuracy and the FNR.
 \vspace{-5pt}
 \paragraph{Evasion Attacks}
-The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented the defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset needed to mitigate the attack.
+The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented a defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset needed to mitigate the attack.
 %\\~\\
 %%# CONTRIBUTIONS #%%
 \section{Contributions}

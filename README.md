@@ -10,5 +10,5 @@ What makes this project stand out is its focus on the machine learning models th
 - `models/`: Jupyter notebooks where all the models were implemented and tested.
 - `pdf_data_enc/`: Encrypted PDF files of the Contagio dataset.
 - `pdfid/`: Library functions of the PDFiD tool
-- `utils/`: Model evaluation and Data Import functions.
-- `report/`: Latek version of the report
+- `utils/`: Model Evaluation and Data Import functions.
+- `report/`: LaTeX report
