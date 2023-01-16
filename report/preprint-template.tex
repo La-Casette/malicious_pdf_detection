@@ -111,7 +111,7 @@
 		\maketitle
 		%%%# ABSTRACT #%%
 		\begin{abstract}
-			This project presents an exhaustive analysis of machine learning techniques for detecting malicious PDF files. By comparing the performance of four binary classification models - Support Vector Machines (SVM), K-Nearest Neighbors (KNN), Decision Trees and Random Forests - we demonstrate the effectiveness of these approaches in achieving high Accuracy and low False Negative Rates.
+			This project presents an exhaustive analysis of machine learning techniques for detecting malicious PDF files. By comparing the performance of four binary classification models - Support Vector Machines (SVM), Decision Trees, Random Forests and K-Nearest Neighbors (KNN) - we demonstrate the effectiveness of these approaches in achieving high Accuracy and low False Negative Rates.
 			What makes this project stand out is its focus on the machine learning models themselves, including the careful selection of hyperparameters to optimize their performance. Additionally, the inclusion of KNN as a valid model is rare in the field, and the analysis of evasion techniques adds another layer of depth to the study. Overall this paper, realized for the MALIS course at EURECOM (year 2022/2023), offers a comprehensive look at the use of machine learning for malicious PDF detection and the potential vulnerabilities of these models.
 		\end{abstract}
 		%\keywords{First keyword \and Second keyword \and More} % (optional)
@@ -185,7 +185,7 @@ We implemented a linear SVM classifier using the \texttt{sklearn} library \cite{
 
 \subsubsection{Experiments}
 % Results obtained with the linear SVM (plots)
-We have cross-validated the linear model by trying $10$ different values for the $C$ hyperparameter in the range $[10^{-6}, 10]$. As explained in Section \ref{sec:datasetsandfeatures}, we optimized for the False Negative Rate (FNR) with the constraint of obtaining a high accuracy anyway.
+We have cross-validated the linear model by trying $10$ different values for the $C$ hyperparameter in the range $[10^{-6}, 10]$. As explained in Section \ref{sec:datasetsandfeatures}, we optimized for the False Negative Rate (FNR) with the constraint of obtaining a high Accuracy anyway.
 
 \begin{figure}[ht!]
 	\centering
@@ -229,7 +229,7 @@ This time we exploited a grid search k-fold cross-validation that trains the mod
 	\item $\gamma$: 10 values in $[10^{-6}, 1]$
 	\item $C$: 10 values in $[10^{-6}, 10]$
 \end{itemize}
-We investigated the influence of both hyperparameters. What it is not displayed and analyzed in the plots is what happens with $C=10^{-6}$ and $\gamma=10^{-6}$, values under which the classifier performs very poorly in terms of Accuracy (around $54\%$) despite achieving a $FPR$ equal to $0\%$. However, this is not better than a dummy classifier that safely detects every PDF as Malicious, hence it is not of interest in this project.
+We investigated the influence of both hyperparameters. What it is not displayed and analyzed in the plots is what happens with $C=10^{-6}$ and $\gamma=10^{-6}$, values under which the classifier performs very poorly in terms of Accuracy (around $54\%$) despite achieving a $FNR$ equal to $0\%$. However, this is not better than a dummy classifier that safely detects every PDF as Malicious, hence it is not of interest in this project.
 
 \begin{figure}[ht!]
 	\centering
@@ -287,7 +287,7 @@ We performed a k-fold cross-validation with 5 folds in order to learn the best m
 			9                  & 99.74\%           & 0.28\%       \\ \hline
 		\end{tabular}
 		\vspace{1mm}
-		\caption{Decision Tree - Optimal depths from cross-validation.}
+		\caption{Decision Trees - Optimal depths from cross-validation.}
 		\label{tab:treetrain}
 		\vspace{-5mm}
 	}
@@ -313,7 +313,7 @@ The best obtained result is:
 	$max\_depth=16 \quad Accuracy=99.80\% \quad FNR=0.22\%$
 \end{center}
 
-\subsubsection{Performances on Test Set}
+\subsection{Performances on Test Set}
 The results obtained on the Test Set of both Decision Trees and Random Forests using the best model parameters discussed in \ref{sub:tree} and \ref{sub:randomforest} are:
 \begin{center}
 	\textbf{Decision Trees}\\
@@ -335,7 +335,7 @@ To determine the optimal value of $K$ (the number of nearest neighbors to consid
 	\caption{Accuracy (left) and FNR (right) when $K$ increases.}
 	\label{fig:knntrain}
 \end{figure}
-The results of this search shows, as expected, that the best performances were achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect is not really high.
+The results of this search shows, as expected, that the best performances are achieved with $K=1$. Since we have selected very discriminant features and we dispose of a large and diverse dataset, we expect that the possible overfitting effect is not really high.
 To visualize the effect of increasing $K$ on the performance of our model, we plotted in Fig. \ref{fig:knntrain} the Accuracy and FNR as a function of $K$. The performance of the model slightly decreases as $K$ increases. This is to be expected, as increasing $K$ allows the model to consider more neighbors, which can introduce more noise and reduce the model's ability to accurately classify samples. The best result obtained is:
 \begin{center}
 	$K=1 \quad Accuracy=99.67\% \quad FNR=0.82\%$
@@ -348,13 +348,13 @@ The results on the Test Set are:
 \end{center}
 
 We also obtained excellent results on the Test Set. We could explain the fact that $K=1$ is still the best model parameter by noticing that, despite the dataset is made of PDFs that are unique, PDFiD is able to extract such discriminant features that different PDFs result to be equal in terms of the extracted features vector. Having overlapped samples in the features space is really helpful for the way KNN classifies because the nearest neighbor of a test sample will probably consist in different overlapped samples, most of them belonging to the same class.
-Our results demonstrate that KNN is an effective technique for detecting malicious PDFs and that it can achieve high level performances with relatively little tuning.
+Our results demonstrate that KNN is an effective technique for detecting Malicious PDFs and that it can achieve high level performances with relatively little tuning.
 
 %%# FINAL RESULTS #%%
 \section{Final results}
 \label{sec:finalresults}
 We have summarized the results of all our classifiers in Tab. \ref{tab:finalresults}.
-The table shows that, as widely discussed in the previous sections, the model that achieves the best results is the Random Forests. Actually, all of them reach an impressively high Accuracy and low FNR. This is also coherent with the results obtained in Maiorca et al. \cite{maiorca_giacinto_corona_1970} that proved Random Forests to be the best performing model. Also the other works cited achieve comparable results.
+The table shows that, as widely discussed in the previous sections, the model that achieves the best results is the Random Forests. Actually, all of them reach an impressively high Accuracy and low FNR. This is also coherent with the results obtained in Maiorca et al. \cite{maiorca_giacinto_corona_1970} that proved Random Forests to be the best performing model.
 \begin{table}[ht!]
 	\centering
 	{\small
@@ -390,7 +390,7 @@ In this Section, we present two evasion attacks against the classifiers we built
 \subsection{Attack against SVM}
 \label{subsec:svm}
 We have studied an evasion attack based on the Gradient Descent algorithm following the idea of Cuan et al. in \cite{cuan_damien_delaplace_valois_2018}. Given
-a feature vector $x$ characterizing a Malicious PDF correctly classified, our goal is to find a $x'$ that will be detected as Benign. The constraint is that $x'$ is obtained with a minimal perturbation over $x$. The function to be minimized is the L1 distance between $x'$ and $x$:
+a features vector $x$ characterizing a Malicious PDF correctly classified, our goal is to find a $x'$ that will be detected as Benign. The constraint is that $x'$ is obtained with a minimal perturbation over $x$. The function to be minimized is the L1 distance between $x'$ and $x$:
 \begin{center}
 	$||x-x'||_1 = \sum_{i=1}^{d}x_i-x_i'$
 \end{center}
@@ -467,7 +467,7 @@ It is called Adversarial Learning and the algorithm is shown in Pseudocode \ref{
 	}
 \end{algorithm}
 
-The results we obtained are overall satisfying because the classifier is able to defend perfectly against our evasion algrorithm.
+The results we obtained are overall satisfying because the classifier is able to defend perfectly against our evasion algorithm.
 
 \begin{figure}[ht!]
 	\centering
@@ -488,10 +488,10 @@ We can also see in Fig. \ref{fig:improved} how the features of the improved data
 \section{Conclusions and future works}
 \label{sec:conclusions}
 \paragraph{Classifiers}
-To conclude, the model that performs better is the Random Forests, both in terms of Accuracy and FNR. Comparable results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patters using the most discriminant features. Further improvement could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited toghether with other types of metrics that take into account both the Accuracy and the FNR.
+To conclude, the model that performs better is the Random Forests, both in terms of Accuracy and FNR. Comparable results are achieved by the other models and the use of PDFiD makes all the algorithms efficient in detecting patterns using the most discriminant features. Further improvements could be done in order to achieve even lower values of FNR. Dimensionality reduction techniques could be exploited toghether with other types of metrics that take into account both the Accuracy and the FNR.
 \vspace{-10pt}
 \paragraph{Evasion Attacks}
-The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented the defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset nedded to mitigate the attack.
+The evasion attack against the Decision Trees showed a really high success rate on the Training Set. We thus implemented the defense mechanism that proved to be very effective using Adversarial Learning. We could investigate more the size of the improved training dataset needed to mitigate the attack.
 
 %%# CONTRIBUTIONS #%%
 \section{Contributions}
@@ -502,7 +502,7 @@ These are the contributions of each member:
 	\item L. Ippolito worked on Decision Trees and Random Forests classifiers carefully exploring all the model parameters and the presence of overfitting.
 	\item M. Picasso studied the KNN classifier to better understand the reason why $K=1$ is the best performing parameter.
 \end{itemize}
-We collaborated as a team both in the features extraction phase and on the choice of the model validation approach. After having assessed the performances of all the models we worked toghether on designing the evasion attacks algorithms and the countermeasueres.
+We collaborated as a team both in the features extraction phase and on the choice of the model validation approach. After having assessed the performances of all the models, we worked toghether on designing the evasion attacks algorithms and the countermeasures.
 \\~\\
 The project directory can be found at:\newline
 \footnotesize{\url{https://github.com/La-Casette/malicious_pdf_detection}}
