@@ -12,3 +12,8 @@ What makes this project stand out is its focus on the machine learning models th
 - `pdfid/`: Library functions of the PDFiD tool
 - `utils/`: Model Evaluation and Data Import functions.
 - `report/`: LaTeX report
+- `poster/`: Presentation slide
+
+## Poster
+
+![Poster](/poster/poster.png)
